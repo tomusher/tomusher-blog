@@ -15,5 +15,11 @@ class PostListView(ListView):
     template_name = "blog/post_list.html"
     
     def get_queryset(self):
-        posts = Post.objects.filter(category=self.kwargs['slug']).order_by('-published_date')[:10]
+        category = self.kwargs['cat']
+        if category=='all':
+            posts = Post.objects.all()
+        else:
+            posts = Post.objects.filter(category=category)
+
+        posts = posts.order_by('-published_date')[:10]
         return posts

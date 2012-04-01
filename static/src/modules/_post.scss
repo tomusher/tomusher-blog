@@ -1,3 +1,17 @@
+/* Post List */
+.post-list {
+    // No styles
+}
+
+.post-list-group {
+    margin-bottom: $baseline-size*1.5;
+
+    .post-list-grouper {
+        @include typeset(1.5, 1);
+        margin-bottom: $baseline-size*0.5;
+    }
+}
+
 /* Post */
 .post {
     position: relative;
@@ -26,6 +40,10 @@
 .post-title {
     color: $dark-color;
     @include typeset(3,1.5);
+    font-family: "alternate-gothic-no-2-d";
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
 
     a {
         color: inherit;
@@ -63,6 +81,7 @@
     .post-title {
         //@include typeset(2, 1.5);
         color: #555;
+
         a {
             text-decoration: underline;
 
@@ -82,7 +101,7 @@
     border-bottom: 0;
 
     .post-title {
-        @include typeset(1.5,0.8);
+        @include typeset(1.5,1.4);
 
         &:before {
             width: 32px;
