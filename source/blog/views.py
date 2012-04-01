@@ -15,5 +15,5 @@ class PostListView(ListView):
     template_name = "blog/post_list.html"
     
     def get_queryset(self):
-        posts = Post.objects.filter(category=self.kwargs['slug'])
+        posts = Post.objects.filter(category=self.kwargs['slug']).order_by('-published_date')[:10]
         return posts
