@@ -45,6 +45,7 @@ body {
     font-family: "Helvetica Neue", sans-serif;
     margin: 0;
     position: relative;
+    background: url("../img/bg.png");
 }
 
 .wrapper {
@@ -104,6 +105,7 @@ pre {
     width: 100%;
     z-index: 10;
     background-color: $dark-color;
+    background-image: url("../img/texture.jpg");
     color: #fff;
     overflow: hidden;
 
@@ -132,6 +134,7 @@ pre {
 /* Site Footer */
 .site-footer {
     background-color: $dark-color;
+    background-image: url("../img/texture.jpg");
     position: relative;
     overflow: hidden;
 

@@ -514,9 +514,10 @@ body {
 body {
   font-family: "Helvetica Neue", sans-serif;
   margin: 0;
-  position: relative; }
+  position: relative;
+  background: url("../img/bg.png"); }
 
-/* line 50, ../src/style.scss */
+/* line 51, ../src/style.scss */
 .wrapper {
   max-width: 940px;
   margin: 80px auto;
@@ -524,7 +525,7 @@ body {
   position: relative; }
 
 /* Typography */
-/* line 59, ../src/style.scss */
+/* line 60, ../src/style.scss */
 p, li, dt, dd {
   font-size: 16px;
   font-size: 1rem;
@@ -534,11 +535,11 @@ p, li, dt, dd {
   margin-bottom: 26px;
   margin-bottom: 1.625rem; }
 
-/* line 66, ../src/style.scss */
+/* line 67, ../src/style.scss */
 li {
   margin-bottom: 0; }
 
-/* line 70, ../src/style.scss */
+/* line 71, ../src/style.scss */
 h1 {
   font-size: 32px;
   font-size: 2rem;
@@ -548,7 +549,7 @@ h1 {
   margin: 0;
   padding: 0; }
 
-/* line 77, ../src/style.scss */
+/* line 78, ../src/style.scss */
 h2 {
   font-size: 22.4px;
   font-size: 1.4rem;
@@ -556,7 +557,7 @@ h2 {
   line-height: 2.438rem;
   margin: 0 0 13px 0; }
 
-/* line 81, ../src/style.scss */
+/* line 82, ../src/style.scss */
 h3 {
   font-size: 16px;
   font-size: 1rem;
@@ -564,7 +565,7 @@ h3 {
   line-height: 1.625rem;
   margin: 0 0 13px 0; }
 
-/* line 85, ../src/style.scss */
+/* line 86, ../src/style.scss */
 h4 {
   font-size: 16px;
   font-size: 1rem;
@@ -573,7 +574,7 @@ h4 {
   margin: 0; }
 
 /* Highlight */
-/* line 91, ../src/style.scss */
+/* line 92, ../src/style.scss */
 pre {
   padding: 0 26px 13px 26px;
   font-size: 12.8px;
@@ -585,23 +586,24 @@ pre {
 /* Layouts ------------- */
 /* --------------------- */
 /* Site Header */
-/* line 103, ../src/style.scss */
+/* line 104, ../src/style.scss */
 .site-header {
   width: 100%;
   z-index: 10;
   background-color: #202020;
+  background-image: url("../img/texture.jpg");
   color: #fff;
   overflow: hidden; }
-  /* line 110, ../src/style.scss */
+  /* line 112, ../src/style.scss */
   .site-header .site-header-content {
     max-width: 940px;
     margin: auto; }
-  /* line 115, ../src/style.scss */
+  /* line 117, ../src/style.scss */
   .site-header .nav-list {
     position: absolute;
     top: 20px; }
 
-/* line 121, ../src/style.scss */
+/* line 123, ../src/style.scss */
 .site-title {
   font-size: 28.8px;
   font-size: 1.8rem;
@@ -609,28 +611,29 @@ pre {
   padding: 5px 0;
   font-family: "alternate-gothic-no-2-d"; }
 
-/* line 128, ../src/style.scss */
+/* line 130, ../src/style.scss */
 .site-title-tom {
   font-weight: bold; }
 
 /* Site Footer */
-/* line 133, ../src/style.scss */
+/* line 135, ../src/style.scss */
 .site-footer {
   background-color: #202020;
+  background-image: url("../img/texture.jpg");
   position: relative;
   overflow: hidden; }
-  /* line 138, ../src/style.scss */
+  /* line 141, ../src/style.scss */
   .site-footer .site-footer-content {
     max-width: 940px;
     margin: auto;
     padding: 20px 0;
     overflow: hidden;
     color: #fff; }
-  /* line 146, ../src/style.scss */
+  /* line 149, ../src/style.scss */
   .site-footer .nav-list {
     float: left;
     width: 200px; }
-  /* line 151, ../src/style.scss */
+  /* line 154, ../src/style.scss */
   .site-footer .about-me {
     float: left;
     width: 400px;
@@ -641,7 +644,7 @@ pre {
     -webkit-box-shadow: #131313 1px 0 0, #2d2d2d -1px 0 0;
     -moz-box-shadow: #131313 1px 0 0, #2d2d2d -1px 0 0;
     box-shadow: #131313 1px 0 0, #2d2d2d -1px 0 0; }
-  /* line 161, ../src/style.scss */
+  /* line 164, ../src/style.scss */
   .site-footer .social-networking {
     float: left;
     width: 240px;
@@ -890,32 +893,37 @@ pre {
     position: absolute;
     left: 0; }
 
-/* line 65, ../src/modules/_post.scss */
+/* line 67, ../src/modules/_post.scss */
+.post-all .post-title:before {
+  background-position: 0px 0;
+  background-color: #777777; }
+
+/* line 67, ../src/modules/_post.scss */
 .post-videogames .post-title:before {
-  background-position: 0 0;
+  background-position: -64px 0;
   background-color: #ad0000; }
 
-/* line 66, ../src/modules/_post.scss */
+/* line 67, ../src/modules/_post.scss */
 .post-boardgames .post-title:before {
-  background-position: -64px 0;
+  background-position: -128px 0;
   background-color: #108c03; }
 
 /* line 67, ../src/modules/_post.scss */
 .post-dev .post-title:before {
-  background-position: -128px 0;
+  background-position: -192px 0;
   background-color: #af049b; }
 
-/* line 68, ../src/modules/_post.scss */
+/* line 67, ../src/modules/_post.scss */
 .post-interesting .post-title:before {
-  background-position: -192px 0;
-  background-color: #0464ba; }
-
-/* line 69, ../src/modules/_post.scss */
-.post-misc .post-title:before {
   background-position: -256px 0;
   background-color: #0464ba; }
 
-/* line 71, ../src/modules/_post.scss */
+/* line 67, ../src/modules/_post.scss */
+.post-misc .post-title:before {
+  background-position: -320px 0;
+  background-color: #bc8f00; }
+
+/* line 74, ../src/modules/_post.scss */
 .post-date {
   color: #999;
   display: block;
@@ -924,13 +932,13 @@ pre {
   line-height: 26px;
   line-height: 1.625rem; }
 
-/* line 81, ../src/modules/_post.scss */
+/* line 84, ../src/modules/_post.scss */
 .post-link .post-title {
   color: #555; }
-  /* line 85, ../src/modules/_post.scss */
+  /* line 88, ../src/modules/_post.scss */
   .post-link .post-title a {
     text-decoration: underline; }
-    /* line 88, ../src/modules/_post.scss */
+    /* line 91, ../src/modules/_post.scss */
     .post-link .post-title a .linkicon {
       color: #999;
       font-size: 32px;
@@ -939,19 +947,19 @@ pre {
       line-height: 1.625rem;
       text-decoration: none; }
 
-/* line 97, ../src/modules/_post.scss */
+/* line 100, ../src/modules/_post.scss */
 .post-short {
   padding-left: 46px;
   margin-bottom: 0;
   padding-bottom: 0;
   border-bottom: 0; }
-  /* line 103, ../src/modules/_post.scss */
+  /* line 106, ../src/modules/_post.scss */
   .post-short .post-title {
     font-size: 24px;
     font-size: 1.5rem;
     line-height: 36.4px;
     line-height: 2.275rem; }
-    /* line 106, ../src/modules/_post.scss */
+    /* line 109, ../src/modules/_post.scss */
     .post-short .post-title:before {
       width: 32px;
       height: 32px;
@@ -959,37 +967,41 @@ pre {
       -moz-background-size: 288px 32px;
       -o-background-size: 288px 32px;
       background-size: 288px 32px; }
-  /* line 114, ../src/modules/_post.scss */
+  /* line 117, ../src/modules/_post.scss */
   .post-short .post-date {
     font-size: 12.8px;
     font-size: 0.8rem;
     line-height: 20.8px;
     line-height: 1.3rem; }
-  /* line 118, ../src/modules/_post.scss */
+  /* line 123, ../src/modules/_post.scss */
+  .post-short.post-all .post-title:before {
+    background-position: 0px 0;
+    background-color: #777777; }
+  /* line 123, ../src/modules/_post.scss */
   .post-short.post-videogames .post-title:before {
-    background-position: 0 0;
-    background-color: #ad0000; }
-  /* line 119, ../src/modules/_post.scss */
-  .post-short.post-boardgames .post-title:before {
     background-position: -32px 0;
-    background-color: #108c03; }
-  /* line 120, ../src/modules/_post.scss */
-  .post-short.post-dev .post-title:before {
+    background-color: #ad0000; }
+  /* line 123, ../src/modules/_post.scss */
+  .post-short.post-boardgames .post-title:before {
     background-position: -64px 0;
-    background-color: #af049b; }
-  /* line 121, ../src/modules/_post.scss */
-  .post-short.post-interesting .post-title:before {
+    background-color: #108c03; }
+  /* line 123, ../src/modules/_post.scss */
+  .post-short.post-dev .post-title:before {
     background-position: -96px 0;
-    background-color: #0464ba; }
-  /* line 122, ../src/modules/_post.scss */
-  .post-short.post-misc .post-title:before {
+    background-color: #af049b; }
+  /* line 123, ../src/modules/_post.scss */
+  .post-short.post-interesting .post-title:before {
     background-position: -128px 0;
     background-color: #0464ba; }
+  /* line 123, ../src/modules/_post.scss */
+  .post-short.post-misc .post-title:before {
+    background-position: -160px 0;
+    background-color: #bc8f00; }
 
-/* line 127, ../src/modules/_post.scss */
+/* line 133, ../src/modules/_post.scss */
 .post-short.post-link .post-title a {
   text-decoration: underline; }
-  /* line 130, ../src/modules/_post.scss */
+  /* line 136, ../src/modules/_post.scss */
   .post-short.post-link .post-title a .linkicon {
     color: #999;
     font-size: 16px;
@@ -999,7 +1011,7 @@ pre {
     text-decoration: none; }
 
 /* About Me */
-/* line 175, ../src/style.scss */
+/* line 178, ../src/style.scss */
 .about-me p {
   font-size: 12.8px;
   font-size: 0.8rem;
@@ -1007,14 +1019,14 @@ pre {
   line-height: 1.3rem; }
 
 /* Social Networking */
-/* line 182, ../src/style.scss */
+/* line 185, ../src/style.scss */
 .social-networking p {
   font-size: 12.8px;
   font-size: 0.8rem;
   line-height: 20.8px;
   line-height: 1.3rem; }
 
-/* line 187, ../src/style.scss */
+/* line 190, ../src/style.scss */
 .social-option {
   width: 32px;
   height: 32px;
@@ -1041,19 +1053,19 @@ pre {
   font-size: 0.8rem;
   line-height: 26px;
   line-height: 1.625rem; }
-  /* line 200, ../src/style.scss */
+  /* line 203, ../src/style.scss */
   .social-option a {
     display: block;
     margin-left: 44px;
     color: #fff;
     text-decoration: none;
     padding: 6px 0; }
-  /* line 208, ../src/style.scss */
+  /* line 211, ../src/style.scss */
   .social-option.social-option-twitter {
     background-position: -192px 0; }
-  /* line 211, ../src/style.scss */
+  /* line 214, ../src/style.scss */
   .social-option.social-option-rss {
     background-position: -224px 0; }
-  /* line 214, ../src/style.scss */
+  /* line 217, ../src/style.scss */
   .social-option.social-option-email {
     background-position: -256px 0; }

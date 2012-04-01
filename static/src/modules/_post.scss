@@ -62,11 +62,14 @@
     }
 }
 
-.post-videogames .post-title:before { background-position: 0 0; background-color: $videogames-color; }
-.post-boardgames .post-title:before { background-position: -64px 0; background-color: $boardgames-color; }
-.post-dev .post-title:before { background-position: -128px 0; background-color: $dev-color; }
-.post-interesting .post-title:before { background-position: -192px 0; background-color: $interesting-color; }
-.post-misc .post-title:before { background-position: -256px 0; background-color: $interesting-color; }
+@each $icon in $category_icons {
+    .post-#{nth($icon,2)} {
+        .post-title:before {
+            background-position: - nth($icon,1)*64px 0;
+            background-color: nth($icon,3);
+        }
+    }
+}
 
 .post-date {
     color: #999;
@@ -115,11 +118,14 @@
         @include typeset(0.8,0.8);
     }
 
-    &.post-videogames .post-title:before { background-position: 0 0; background-color: $videogames-color; }
-    &.post-boardgames .post-title:before { background-position: -32px 0; background-color: $boardgames-color; }
-    &.post-dev .post-title:before { background-position: -64px 0; background-color: $dev-color; }
-    &.post-interesting .post-title:before { background-position: -96px 0; background-color: $interesting-color; }
-    &.post-misc .post-title:before { background-position: -128px 0; background-color: $interesting-color; }
+    @each $icon in $category_icons {
+        &.post-#{nth($icon,2)} {
+            .post-title:before {
+                background-position: - nth($icon,1)*32px 0;
+                background-color: nth($icon,3);
+            }
+        }
+    }
 }
 
 .post-short.post-link {
