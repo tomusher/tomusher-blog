@@ -784,18 +784,25 @@ code {
   .post p {
     max-width: 600px; }
 
-/* line 302, ../src/style.scss */
+/* line 303, ../src/style.scss */
+.post-short .post-title {
+  font-size: 32px;
+  font-size: 2rem;
+  line-height: 39px;
+  line-height: 2.438rem; }
+
+/* line 308, ../src/style.scss */
 .post-title {
   color: #202020;
   font-size: 48px;
   font-size: 3rem;
   line-height: 39px;
   line-height: 2.438rem; }
-  /* line 306, ../src/style.scss */
+  /* line 312, ../src/style.scss */
   .post-title a {
     color: inherit;
     text-decoration: none; }
-  /* line 310, ../src/style.scss */
+  /* line 316, ../src/style.scss */
   .post-title:before {
     display: block;
     content: '';
@@ -814,27 +821,27 @@ code {
     position: absolute;
     left: 0; }
 
-/* line 323, ../src/style.scss */
+/* line 329, ../src/style.scss */
 .post-videogames .post-title:before {
   background-position: 0 0;
   background-color: #ad0000; }
 
-/* line 324, ../src/style.scss */
+/* line 330, ../src/style.scss */
 .post-boardgames .post-title:before {
   background-position: -64px 0;
   background-color: #108c03; }
 
-/* line 325, ../src/style.scss */
+/* line 331, ../src/style.scss */
 .post-dev .post-title:before {
   background-position: -128px 0;
   background-color: #af049b; }
 
-/* line 326, ../src/style.scss */
+/* line 332, ../src/style.scss */
 .post-interesting .post-title:before {
   background-position: -192px 0;
   background-color: #0464ba; }
 
-/* line 328, ../src/style.scss */
+/* line 334, ../src/style.scss */
 .post-date {
   color: #999;
   display: block;
@@ -843,13 +850,13 @@ code {
   line-height: 26px;
   line-height: 1.625rem; }
 
-/* line 338, ../src/style.scss */
+/* line 344, ../src/style.scss */
 .post-link .post-title {
   color: #555; }
-  /* line 341, ../src/style.scss */
+  /* line 347, ../src/style.scss */
   .post-link .post-title a {
     text-decoration: underline; }
-    /* line 344, ../src/style.scss */
+    /* line 350, ../src/style.scss */
     .post-link .post-title a .linkicon {
       color: #999;
       font-size: 32px;
@@ -859,7 +866,7 @@ code {
       text-decoration: none; }
 
 /* About Me */
-/* line 355, ../src/style.scss */
+/* line 361, ../src/style.scss */
 .about-me p {
   font-size: 12.8px;
   font-size: 0.8rem;
@@ -867,7 +874,7 @@ code {
   line-height: 1.3rem; }
 
 /* Social Networking */
-/* line 362, ../src/style.scss */
+/* line 368, ../src/style.scss */
 .social-networking p {
   font-size: 12.8px;
   font-size: 0.8rem;

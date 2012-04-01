@@ -1,0 +1,10 @@
+<article class="post post-short post-{{ post.category }} {% if post.link %}post-link{% endif %}">
+    <h1 class="post-title">
+        {% if post.link %}
+            <a href="{{ post.link }}">{{ post.title }} <span class="linkicon">→</span></a>
+        {% else %}
+            <a href="{% url post_detail post.slug %}">{{ post.title }}</a>
+        {% endif %}
+    </h1>
+    <span class="post-date">{{ post.published_date|date:"F d, Y" }}</span>
+</article>

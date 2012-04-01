@@ -3,7 +3,7 @@ from base.views import HomeView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from filebrowser.sites import site
 from django.conf import settings
-from blog.views import PostDetailView
+from blog.views import PostDetailView, PostListView
 
 from django.contrib import admin
 admin.autodiscover()
@@ -15,6 +15,7 @@ urlpatterns = patterns('',
 
     url(r'$^', HomeView.as_view(), name="home"),
     url(r'^posts/(?P<slug>[\w-]+)/$', PostDetailView.as_view(), name="post_detail"),
+    url(r'^(?P<slug>[\w-]+)/$', PostListView.as_view(), name="post_list"),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
         'document_root' : settings.MEDIA_ROOT,
     }),

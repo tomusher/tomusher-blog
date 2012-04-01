@@ -2,10 +2,11 @@ from django.db import models
 import markdown
 
 CATEGORIES = (
-    ('videogames', 'Video Games'),
+    ('technology', 'Technology & Video Games'),
     ('boardgames', 'Board Games'),
     ('interesting', 'Interesting'),
     ('dev', 'Development & Design'),
+    ('misc', 'Misc'),
 )
 
 class Post(models.Model):
