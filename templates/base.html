@@ -1,0 +1,75 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Tom Usher</title>
+    <meta name="description" content="">
+
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="{{ STATIC_URL}}css/style.css">
+    <link rel="stylesheet" href="{{ STATIC_URL}}css/friendly.css">
+    <link rel="stylesheet" href="{{ STATIC_URL}}css/github.css">
+
+    <script type="text/javascript" src="http://use.typekit.com/bge6ayd.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <!--<script src="{{ STATIC_URL }}js/libs/modernizr-2.5.3.min.js"></script>-->
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-header-content">
+            <ul class="category-list">
+                <li class="category category-all"><a href="#">All</a></li>
+                <li class="category category-dev"><a href="#">Development &amp; Design</a></li>
+                <li class="category category-boardgames"><a href="#">Board Games</a></li>
+                <li class="category category-videogames"><a href="#">Video Games</a></li>
+                <li class="category category-interesting"><a href="#">Interesting</a></li>
+                <li class="category category-misc"><a href="#">Misc</a></li>
+            </ul>
+        
+            <span class="site-title"><span class="site-title-tom">tom</span>usher</span>
+        </div>
+    </header>
+    <div role="main" class="wrapper">
+        <div class="main">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    <footer>
+        <ul class="category-list category-list-detailed">
+            <li class="category category-all"><a href="#">All</a></li>
+            <li class="category category-dev"><a href="#">Development &amp; Design</a></li>
+            <li class="category category-boardgames"><a href="#">Board Games</a></li>
+            <li class="category category-videogames"><a href="#">Video Games</a></li>
+            <li class="category category-interesting"><a href="#">Interesting</a></li>
+            <li class="category category-misc"><a href="#">Misc</a></li>
+        </ul>
+    </footer>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+    <!--<script src="js/plugins.js"></script> -->
+    <script src="{{ STATIC_URL }}js/highlight.pack.js"></script>
+    <script src="{{ STATIC_URL }}js/script.js"></script>
+    <!-- end scripts -->
+
+    <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+    mathiasbynens.be/notes/async-analytics-snippet -->
+    <script>
+        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
+

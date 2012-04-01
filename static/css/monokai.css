@@ -1,0 +1,301 @@
+/* line 1, ../src/monokai.scss */
+.codehilite {
+  background-color: #272822;
+  color: #F8F8F2;
+  padding: 10px; }
+
+/* line 6, ../src/monokai.scss */
+.codehilite .hll {
+  background-color: #49483e; }
+
+/* line 7, ../src/monokai.scss */
+.codehilite .c {
+  color: #75715e; }
+
+/* Comment */
+/* line 8, ../src/monokai.scss */
+.codehilite .err {
+  color: #960050;
+  background-color: #1e0010; }
+
+/* Error */
+/* line 9, ../src/monokai.scss */
+.codehilite .k {
+  color: #66d9ef; }
+
+/* Keyword */
+/* line 10, ../src/monokai.scss */
+.codehilite .l {
+  color: #ae81ff; }
+
+/* Literal */
+/* line 11, ../src/monokai.scss */
+.codehilite .n {
+  color: #f8f8f2; }
+
+/* Name */
+/* line 12, ../src/monokai.scss */
+.codehilite .o {
+  color: #f92672; }
+
+/* Operator */
+/* line 13, ../src/monokai.scss */
+.codehilite .p {
+  color: #f8f8f2; }
+
+/* Punctuation */
+/* line 14, ../src/monokai.scss */
+.codehilite .cm {
+  color: #75715e; }
+
+/* Comment.Multiline */
+/* line 15, ../src/monokai.scss */
+.codehilite .cp {
+  color: #75715e; }
+
+/* Comment.Preproc */
+/* line 16, ../src/monokai.scss */
+.codehilite .c1 {
+  color: #75715e; }
+
+/* Comment.Single */
+/* line 17, ../src/monokai.scss */
+.codehilite .cs {
+  color: #75715e; }
+
+/* Comment.Special */
+/* line 18, ../src/monokai.scss */
+.codehilite .ge {
+  font-style: italic; }
+
+/* Generic.Emph */
+/* line 19, ../src/monokai.scss */
+.codehilite .gs {
+  font-weight: bold; }
+
+/* Generic.Strong */
+/* line 20, ../src/monokai.scss */
+.codehilite .kc {
+  color: #66d9ef; }
+
+/* Keyword.Constant */
+/* line 21, ../src/monokai.scss */
+.codehilite .kd {
+  color: #66d9ef; }
+
+/* Keyword.Declaration */
+/* line 22, ../src/monokai.scss */
+.codehilite .kn {
+  color: #f92672; }
+
+/* Keyword.Namespace */
+/* line 23, ../src/monokai.scss */
+.codehilite .kp {
+  color: #66d9ef; }
+
+/* Keyword.Pseudo */
+/* line 24, ../src/monokai.scss */
+.codehilite .kr {
+  color: #66d9ef; }
+
+/* Keyword.Reserved */
+/* line 25, ../src/monokai.scss */
+.codehilite .kt {
+  color: #66d9ef; }
+
+/* Keyword.Type */
+/* line 26, ../src/monokai.scss */
+.codehilite .ld {
+  color: #e6db74; }
+
+/* Literal.Date */
+/* line 27, ../src/monokai.scss */
+.codehilite .m {
+  color: #ae81ff; }
+
+/* Literal.Number */
+/* line 28, ../src/monokai.scss */
+.codehilite .s {
+  color: #e6db74; }
+
+/* Literal.String */
+/* line 29, ../src/monokai.scss */
+.codehilite .na {
+  color: #a6e22e; }
+
+/* Name.Attribute */
+/* line 30, ../src/monokai.scss */
+.codehilite .nb {
+  color: #f8f8f2; }
+
+/* Name.Builtin */
+/* line 31, ../src/monokai.scss */
+.codehilite .nc {
+  color: #a6e22e; }
+
+/* Name.Class */
+/* line 32, ../src/monokai.scss */
+.codehilite .no {
+  color: #66d9ef; }
+
+/* Name.Constant */
+/* line 33, ../src/monokai.scss */
+.codehilite .nd {
+  color: #a6e22e; }
+
+/* Name.Decorator */
+/* line 34, ../src/monokai.scss */
+.codehilite .ni {
+  color: #f8f8f2; }
+
+/* Name.Entity */
+/* line 35, ../src/monokai.scss */
+.codehilite .ne {
+  color: #a6e22e; }
+
+/* Name.Exception */
+/* line 36, ../src/monokai.scss */
+.codehilite .nf {
+  color: #a6e22e; }
+
+/* Name.Function */
+/* line 37, ../src/monokai.scss */
+.codehilite .nl {
+  color: #f8f8f2; }
+
+/* Name.Label */
+/* line 38, ../src/monokai.scss */
+.codehilite .nn {
+  color: #f8f8f2; }
+
+/* Name.Namespace */
+/* line 39, ../src/monokai.scss */
+.codehilite .nx {
+  color: #a6e22e; }
+
+/* Name.Other */
+/* line 40, ../src/monokai.scss */
+.codehilite .py {
+  color: #f8f8f2; }
+
+/* Name.Property */
+/* line 41, ../src/monokai.scss */
+.codehilite .nt {
+  color: #f92672; }
+
+/* Name.Tag */
+/* line 42, ../src/monokai.scss */
+.codehilite .nv {
+  color: #f8f8f2; }
+
+/* Name.Variable */
+/* line 43, ../src/monokai.scss */
+.codehilite .ow {
+  color: #f92672; }
+
+/* Operator.Word */
+/* line 44, ../src/monokai.scss */
+.codehilite .w {
+  color: #f8f8f2; }
+
+/* Text.Whitespace */
+/* line 45, ../src/monokai.scss */
+.codehilite .mf {
+  color: #ae81ff; }
+
+/* Literal.Number.Float */
+/* line 46, ../src/monokai.scss */
+.codehilite .mh {
+  color: #ae81ff; }
+
+/* Literal.Number.Hex */
+/* line 47, ../src/monokai.scss */
+.codehilite .mi {
+  color: #ae81ff; }
+
+/* Literal.Number.Integer */
+/* line 48, ../src/monokai.scss */
+.codehilite .mo {
+  color: #ae81ff; }
+
+/* Literal.Number.Oct */
+/* line 49, ../src/monokai.scss */
+.codehilite .sb {
+  color: #e6db74; }
+
+/* Literal.String.Backtick */
+/* line 50, ../src/monokai.scss */
+.codehilite .sc {
+  color: #e6db74; }
+
+/* Literal.String.Char */
+/* line 51, ../src/monokai.scss */
+.codehilite .sd {
+  color: #e6db74; }
+
+/* Literal.String.Doc */
+/* line 52, ../src/monokai.scss */
+.codehilite .s2 {
+  color: #e6db74; }
+
+/* Literal.String.Double */
+/* line 53, ../src/monokai.scss */
+.codehilite .se {
+  color: #ae81ff; }
+
+/* Literal.String.Escape */
+/* line 54, ../src/monokai.scss */
+.codehilite .sh {
+  color: #e6db74; }
+
+/* Literal.String.Heredoc */
+/* line 55, ../src/monokai.scss */
+.codehilite .si {
+  color: #e6db74; }
+
+/* Literal.String.Interpol */
+/* line 56, ../src/monokai.scss */
+.codehilite .sx {
+  color: #e6db74; }
+
+/* Literal.String.Other */
+/* line 57, ../src/monokai.scss */
+.codehilite .sr {
+  color: #e6db74; }
+
+/* Literal.String.Regex */
+/* line 58, ../src/monokai.scss */
+.codehilite .s1 {
+  color: #e6db74; }
+
+/* Literal.String.Single */
+/* line 59, ../src/monokai.scss */
+.codehilite .ss {
+  color: #e6db74; }
+
+/* Literal.String.Symbol */
+/* line 60, ../src/monokai.scss */
+.codehilite .bp {
+  color: #f8f8f2; }
+
+/* Name.Builtin.Pseudo */
+/* line 61, ../src/monokai.scss */
+.codehilite .vc {
+  color: #f8f8f2; }
+
+/* Name.Variable.Class */
+/* line 62, ../src/monokai.scss */
+.codehilite .vg {
+  color: #f8f8f2; }
+
+/* Name.Variable.Global */
+/* line 63, ../src/monokai.scss */
+.codehilite .vi {
+  color: #f8f8f2; }
+
+/* Name.Variable.Instance */
+/* line 64, ../src/monokai.scss */
+.codehilite .il {
+  color: #ae81ff; }
+
+/* Literal.Number.Integer.Long */

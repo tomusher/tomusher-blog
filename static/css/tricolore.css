@@ -1,0 +1,64 @@
+/**
+ * Tricolore theme
+ *
+ * @author Jean Nicolas
+ * @version 1.0
+ */
+/* line 7, ../src/tricolore.scss */
+pre {
+  background: #FFF;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  margin: 0px;
+  padding: 0px;
+  padding: 10px;
+  color: #000;
+  font-size: 12px;
+  margin-bottom: 20px;
+  line-height: 16px; }
+
+/* line 23, ../src/tricolore.scss */
+pre, code {
+  font-family: 'Monaco', 'Consolas', monospace; }
+
+/* line 27, ../src/tricolore.scss */
+pre .comment {
+  color: #7E7E7E;
+  font-style: italic; }
+
+/* line 32, ../src/tricolore.scss */
+pre .constant, pre .integer {
+  color: #18838A;
+  font-weight: bold; }
+
+/* line 37, ../src/tricolore.scss */
+pre .storage {
+  color: #0000A1; }
+
+/* line 41, ../src/tricolore.scss */
+pre .string {
+  color: #8E0022; }
+
+/* line 45, ../src/tricolore.scss */
+pre .keyword, pre .selector {
+  color: #0000A1;
+  font-weight: bold; }
+
+/* line 50, ../src/tricolore.scss */
+pre .parent {
+  font-style: italic; }
+
+/* line 54, ../src/tricolore.scss */
+pre .entity, pre .meta {
+  color: #3E853F; }
+
+/* line 58, ../src/tricolore.scss */
+pre .support {
+  color: #192140; }
+
+/* line 62, ../src/tricolore.scss */
+pre .variable.global, pre .variable.class, pre .variable.instance {
+  color: #3E853F; }
