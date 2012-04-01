@@ -23,13 +23,13 @@
 <body>
     <header class="site-header">
         <div class="site-header-content">
-            <ul class="category-list">
-                <li class="category category-all"><a href="{% url post_list "all" %}">All</a></li>
-                <li class="category category-dev"><a href="{% url post_list "dev" %}">Development &amp; Design</a></li>
-                <li class="category category-boardgames"><a href="{% url post_list "boardgames" %}">Board Games</a></li>
-                <li class="category category-videogames"><a href="{% url post_list "technology" %}">Technology &amp; Video Games</a></li>
-                <li class="category category-interesting"><a href="{% url post_list "interesting" %}">Interesting</a></li>
-                <li class="category category-misc"><a href="{% url post_list "misc" %}">Misc</a></li>
+            <ul class="nav-list nav-list-simple">
+                <li class="nav-item category-all"><a href="{% url post_list "all" %}"><span class="nav-item-icon"></span>All</a></li>
+                <li class="nav-item category-dev"><a href="{% url post_list "dev" %}"><span class="nav-item-icon"></span>Development &amp; Design</a></li>
+                <li class="nav-item category-boardgames"><a href="{% url post_list "boardgames" %}"><span class="nav-item-icon"></span>Board Games</a></li>
+                <li class="nav-item category-videogames"><a href="{% url post_list "technology" %}"><span class="nav-item-icon"></span>Technology &amp; Video Games</a></li>
+                <li class="nav-item category-interesting"><a href="{% url post_list "interesting" %}"><span class="nav-item-icon"></span>Interesting</a></li>
+                <li class="nav-item category-misc"><a href="{% url post_list "misc" %}"><span class="nav-item-icon"></span>Misc</a></li>
             </ul>
         
             <span class="site-title"><span class="site-title-tom">tom</span>usher</span>
@@ -42,19 +42,21 @@
     </div>
     <footer class="site-footer">
         <div class="site-footer-content">
-            <ul class="category-list category-list-detailed">
-                <li class="category category-all"><a href="{% url post_list "all" %}">All</a></li>
-                <li class="category category-dev"><a href="{% url post_list "dev" %}">Development &amp; Design</a></li>
-                <li class="category category-boardgames"><a href="{% url post_list "boardgames" %}">Board Games</a></li>
-                <li class="category category-videogames"><a href="{% url post_list "technology" %}">Technology &amp; Video Games</a></li>
-                <li class="category category-interesting"><a href="{% url post_list "interesting" %}">Interesting</a></li>
-                <li class="category category-misc"><a href="{% url post_list "misc" %}">Misc</a></li>
+            <ul class="nav-list">
+                <li class="nav-item nav-item-small category-all"><a href="{% url post_list "all" %}"><span class="nav-item-icon"></span>All</a></li>
+                <li class="nav-item nav-item-small category-dev"><a href="{% url post_list "dev" %}"><span class="nav-item-icon"></span>Development &amp; Design</a></li>
+                <li class="nav-item nav-item-small category-boardgames"><a href="{% url post_list "boardgames" %}"><span class="nav-item-icon"></span>Board Games</a></li>
+                <li class="nav-item nav-item-small category-videogames"><a href="{% url post_list "technology" %}"><span class="nav-item-icon"></span>Technology &amp; Video Games</a></li>
+                <li class="nav-item nav-item-small category-interesting"><a href="{% url post_list "interesting" %}"><span class="nav-item-icon"></span>Interesting</a></li>
+                <li class="nav-item nav-item-small category-misc"><a href="{% url post_list "misc" %}"><span class="nav-item-icon"></span>Misc</a></li>
             </ul>
             <div class="about-me">
                 <p>Brisket t-bone sirloin spare ribs ground round, pastrami swine shoulder sausage drumstick short ribs shank pork loin beef ribs filet mignon. Leberkas tri-tip tail frankfurter jerky. Strip steak pancetta meatloaf, ground round turkey hamburger ball tip salami corned beef. Pork belly fatback pork loin chuck, frankfurter ribeye bresaola cow tri-tip.</p>
             </div>
-            <div class="social-networking">
-                <p>Brisket t-bone sirloin spare ribs ground round, pastrami swine shoulder sausage drumstick short ribs shank pork loin beef ribs filet mignon. Leberkas tri-tip tail frankfurter jerky. Strip steak pancetta meatloaf, ground round turkey hamburger ball tip salami corned beef. Pork belly fatback pork loin chuck, frankfurter ribeye bresaola cow tri-tip.</p>
+            <div class="nav-list">
+                <li class="nav-item social-rss"><a href="{% url post_list "all" %}"><span class="nav-item-icon"></span>RSS Feed</a></li>
+                <li class="nav-item social-twitter"><a href="{% url post_list "dev" %}"><span class="nav-item-icon"></span>Follow me on Twitter</a></li>
+                <li class="nav-item social-mail"><a href="{% url post_list "boardgames" %}"><span class="nav-item-icon"></span>E-mail me</a></li>
             </div>
         </div>
     </footer>

@@ -22,6 +22,9 @@ $dev-color: #AF049B;
 $interesting-color: #0464BA;
 $misc-color: #BC8F00;
 
+$category_icons: 0 all #777, 1 videogames #AD0000, 2 boardgames #108C03, 3 dev #AF049B, 4 interesting #0464BA, 5 misc #BC8F00;
+$social_icons: 6 twitter #5DD7FC, 7 rss #F37920, 8 mail #A3020E;
+
 /* Function */
 // Convert a pixel value in to a rem
 @function as-rem($size) {
@@ -109,7 +112,7 @@ pre {
         margin: auto;
     }
 
-    .category-list {
+    .nav-list {
         position: absolute;
         top: 20px;
     }
@@ -140,19 +143,19 @@ pre {
         color: #fff;
     }
     
-    .category-list {
+    .nav-list {
         float: left;
         width: 200px;
-        border-right: 1px solid lighten($dark-color, 5);
-        @include box-shadow(darken($dark-color, 5) 1px 0 0);
     }
     
     .about-me {
         float: left;
         width: 400px;
         padding: 0 30px;
+        margin: 0 30px;
         border-right: 1px solid lighten($dark-color, 5);
-        @include box-shadow(darken($dark-color, 5) 1px 0 0);
+        border-left: 1px solid darken($dark-color, 5);
+        @include box-shadow(darken($dark-color, 5) 1px 0 0, lighten($dark-color, 5) -1px 0 0);
     }
 
     .social-networking {
@@ -163,7 +166,7 @@ pre {
 }
 
 
-@import "modules/_category_list.scss";
+@import "modules/_nav_list.scss";
 @import "modules/_post.scss";
 
 
@@ -181,3 +184,34 @@ pre {
     }
 }
 
+.social-option {
+    width: 32px;
+    height: 32px;
+    background: $dark-color url("../img/icons.svg") 0 0;
+    @include background-size(288px 32px);
+    @include border-radius(20px);
+    border: 4px solid #fff;
+    white-space: nowrap;
+    margin: 4px 0;
+    @include single-transition(all, 0.5s, ease-out);
+    display: block;
+    @include typeset(0.8, 1);
+
+    a {
+        display: block;
+        margin-left: 44px;
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 0;
+    }
+
+    &.social-option-twitter {
+        background-position: -192px 0;
+    }
+    &.social-option-rss {
+        background-position: -224px 0;
+    }
+    &.social-option-email {
+        background-position: -256px 0;
+    }
+}
