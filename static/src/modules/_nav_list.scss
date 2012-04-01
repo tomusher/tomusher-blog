@@ -42,6 +42,10 @@
         color: #fff;
         text-decoration: none;
         display: block;
+
+        &:hover .nav-item-icon {
+            margin-right: 12px;
+        }
     }
 }
 
