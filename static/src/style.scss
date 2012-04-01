@@ -72,7 +72,15 @@ h1 {
     padding: 0;
 }
 
-/* Layout */
+/* Highlight */
+code {
+    padding: $baseline-size*0.5 $baseline-size;
+    @include typeset(0.8, 0.8);
+    margin: -$baseline-size*0.5 0 $baseline-size*0.5 0;
+}
+
+/* Layouts ------------- */
+/* --------------------- */
 .main {
 }
 
@@ -83,11 +91,16 @@ h1 {
     background-color: $dark-color;
     color: #fff;
     overflow: hidden;
-}
 
-.site-header-content {
-    max-width: 940px;
-    margin: auto;
+    .site-header-content {
+        max-width: 940px;
+        margin: auto;
+    }
+
+    .category-list {
+        position: absolute;
+        top: 20px;
+    }
 }
 
 .site-title {
@@ -102,10 +115,39 @@ h1 {
 }
 
 /* Site Footer */
-footer {
+.site-footer {
     background-color: $dark-color;
     position: relative;
     overflow: hidden;
+
+    .site-footer-content {
+        max-width: 940px;
+        margin: auto;
+        padding: 20px 0;
+        overflow: hidden;
+        color: #fff;
+    }
+    
+    .category-list {
+        float: left;
+        width: 200px;
+        border-right: 1px solid lighten($dark-color, 5);
+        @include box-shadow(darken($dark-color, 5) 1px 0 0);
+    }
+    
+    .about-me {
+        float: left;
+        width: 400px;
+        padding: 0 30px;
+        border-right: 1px solid lighten($dark-color, 5);
+        @include box-shadow(darken($dark-color, 5) 1px 0 0);
+    }
+
+    .social-networking {
+        float: left;
+        width: 240px;
+        padding-left: 30px;
+    }
 }
 
 /* Category List */
@@ -114,77 +156,11 @@ footer {
     padding: 0;
     margin: 0;
     overflow: hidden;
-    position: absolute;
-    top: 20px;
+    position: relative;
 
-    .category { 
+    .category {
         float: left;
-        width: 32px;
-        height: 32px;
         margin: 12px 2px 2px 0;
-        background: $dark-color url("../img/icons.svg") 0 0;
-        @include background-size(192px 32px);
-        @include border-radius(20px);
-        border: 4px solid #fff;
-        text-indent: -9999px;
-        white-space: nowrap;
-        overflow: hidden;
-        @include single-transition(all, 0.5s, ease-out);
-
-        a {
-            width: 32px;
-            height: 32px;
-            display: block;
-
-        }
-    }
-    .category-all { 
-        background-position: -128px 0; 
-
-        &:hover {
-            border-color: lighten($all-color,45);
-            background-color: $all-color;
-        }
-    }
-    .category-videogames { 
-        background-position: 0 0; 
-
-        &:hover {
-            border-color: lighten($videogames-color,60);
-            background-color: $videogames-color;
-        }
-    }
-    .category-boardgames { 
-        background-position: -32px 0; 
-
-        &:hover {
-            border-color: lighten($boardgames-color,60);
-            background-color: $boardgames-color;
-        }
-    }
-    .category-dev { 
-        background-position: -64px 0; 
-
-        &:hover {
-            border-color: lighten($dev-color,60);
-            background-color: $dev-color;
-        }
-    }
-    .category-interesting { 
-        background-position: -96px 0; 
-
-        &:hover {
-            border-color: lighten($interesting-color,55);
-            background-color: $interesting-color;
-        }
-    }
-    .category-misc { 
-        background-position: -160px 0; 
-
-        &:hover {
-            border-color: lighten($misc-color,60);
-            background-color: $misc-color;
-        }
     }
 }
 
@@ -196,102 +172,114 @@ footer {
         float: none;
         text-indent: 0;
         overflow: visible;
-        margin: 2px 0;
+        margin: 4px 0;
+        @include background-size(120px 20px);
+        width: 20px;
+        height: 20px;
+        border: 2px solid #fff;
 
         a {
-            margin-left: 44px;
+            @include typeset(0.8, 0.8);
+            margin-left: 28px;
             color: #fff;
             text-decoration: none;
+            display: block;
         }
     }
-}
-/* Nav Tools */
-.nav-panel {
-    display: none;
-    position: relative;
-}
-
-.nav-panel-section {
-    float: left;
-    vertical-align: top;
-    padding: 0 20px;
-    border-right: 1px solid #999;
-    @include box-shadow(#fff 1px 0 0 0);
-    min-height: 100%;
-
-    > h2 {
-        @include typeset(0.8, 0.8);
-        margin: 0;
-        padding: 0;
+    .category-all { 
+        background-position: -80px 0; 
     }
-
-    > ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-
-        > li {
-            @include typeset(0.8, 0.8);
-        }
+    .category-videogames { 
+        background-position: 0 0; 
+    }
+    .category-boardgames { 
+        background-position: -20px 0; 
+    }
+    .category-dev { 
+        background-position: -40px 0; 
+    }
+    .category-interesting { 
+        background-position: -60px 0; 
+    }
+    .category-misc { 
+        background-position: -100px 0; 
     }
 }
 
-
-/* Post */
-.post-title {
-    color: $dark-color;
+/* Category */
+.category { 
+    width: 32px;
+    height: 32px;
+    background: $dark-color url("../img/icons.svg") 0 0;
+    @include background-size(192px 32px);
+    @include border-radius(20px);
+    border: 4px solid #fff;
+    text-indent: -9999px;
+    white-space: nowrap;
+    overflow: hidden;
+    @include single-transition(all, 0.5s, ease-out);
 
     a {
-        color: inherit;
-        text-decoration: none;
-    }
-    &:before {
+        width: 32px;
+        height: 32px;
         display: block;
-        content: '';
-        width: 64px;
-        height: 64px;
-        background: $dark-color url("../img/icons.svg") 0 0;
-        @include background-size(auto);
-        @include border-radius(32px);
-        position: absolute;
-        left: 0;
+
     }
 }
-.post-videogames .post-title:before { background-position: 0 0; background-color: $videogames-color; }
-.post-boardgames .post-title:before { background-position: -64px 0; background-color: $boardgames-color; }
-.post-dev .post-title:before { background-position: -128px 0; background-color: $dev-color; }
-.post-interesting .post-title:before { background-position: -192px 0; background-color: $interesting-color; }
+.category-all { 
+    background-position: -128px 0; 
 
-.post-date {
-    color: #999;
-    display: block;
-    margin-bottom: $baseline-size/2;
-    margin-bottom: as-rem($baseline-size/2);
-    line-height: $baseline-size;
-    line-height: as-rem($baseline-size);
+    &:hover {
+        border-color: lighten($all-color,45);
+        background-color: $all-color;
+    }
 }
+.category-videogames { 
+    background-position: 0 0; 
 
-.post-link {
-    .post-title {
-        @include typeset(2, 1.5);
-        color: #555;
-        a {
-            text-decoration: underline;
+    &:hover {
+        border-color: lighten($videogames-color,60);
+        background-color: $videogames-color;
+    }
+}
+.category-boardgames { 
+    background-position: -32px 0; 
 
-            .linkicon {
-                color: #999;
-                @include typeset(2,1);
-                text-decoration: none;
-            }
-        }
+    &:hover {
+        border-color: lighten($boardgames-color,60);
+        background-color: $boardgames-color;
+    }
+}
+.category-dev { 
+    background-position: -64px 0; 
+
+    &:hover {
+        border-color: lighten($dev-color,60);
+        background-color: $dev-color;
+    }
+}
+.category-interesting { 
+    background-position: -96px 0; 
+
+    &:hover {
+        border-color: lighten($interesting-color,55);
+        background-color: $interesting-color;
+    }
+}
+.category-misc { 
+    background-position: -160px 0; 
+
+    &:hover {
+        border-color: lighten($misc-color,60);
+        background-color: $misc-color;
     }
 }
 
+/* Post */
 .post {
     position: relative;
-    width: 100%;
     margin-bottom: $baseline-size*2;
-    padding-bottom: $baseline-size*0.5;
+    padding-bottom: $baseline-size*1;
     padding-left: 80px;
     border-bottom: 1px solid #ccc;
 
@@ -311,11 +299,68 @@ footer {
     }
 }
 
-/* Highlight */
-code {
-    padding: $baseline-size*0.5 $baseline-size;
-    @include typeset(0.8, 0.8);
-    margin: -$baseline-size*0.5 0 $baseline-size*0.5 0;
+.post-title {
+    color: $dark-color;
+    @include typeset(3,1.5);
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+    &:before {
+        display: block;
+        content: '';
+        width: 64px;
+        height: 64px;
+        background: $dark-color url("../img/icons.svg") 0 0;
+        @include background-size(auto);
+        @include border-radius(32px);
+        position: absolute;
+        left: 0;
+    }
 }
 
+.post-videogames .post-title:before { background-position: 0 0; background-color: $videogames-color; }
+.post-boardgames .post-title:before { background-position: -64px 0; background-color: $boardgames-color; }
+.post-dev .post-title:before { background-position: -128px 0; background-color: $dev-color; }
+.post-interesting .post-title:before { background-position: -192px 0; background-color: $interesting-color; }
+
+.post-date {
+    color: #999;
+    display: block;
+    margin-bottom: $baseline-size*0.5;
+    margin-bottom: as-rem($baseline-size*0.5);
+    line-height: $baseline-size;
+    line-height: as-rem($baseline-size);
+}
+
+.post-link {
+    .post-title {
+        //@include typeset(2, 1.5);
+        color: #555;
+        a {
+            text-decoration: underline;
+
+            .linkicon {
+                color: #999;
+                @include typeset(2,1);
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+/* About Me */
+.about-me {
+    p {
+        @include typeset(0.8, 0.8);
+    }
+}
+
+/* Social Networking */
+.social-networking {
+    p {
+        @include typeset(0.8, 0.8);
+    }
+}
 
