@@ -1,0 +1,6 @@
+.about-me {
+    p {
+        @include typeset(0.8, 0.8);
+        margin-bottom: $baseline-size*0.8;
+    }
+}

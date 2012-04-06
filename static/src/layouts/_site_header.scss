@@ -1,0 +1,19 @@
+.site-header {
+    width: 100%;
+    z-index: 10;
+    background-color: $dark-color;
+    background-image: url("../img/texture.jpg");
+    color: #fff;
+    overflow: hidden;
+
+    .site-header-content {
+        max-width: 940px;
+        margin: auto;
+    }
+
+    .nav-list {
+        position: absolute;
+        top: 20px;
+    }
+}
+

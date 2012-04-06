@@ -1,0 +1,6 @@
+@mixin typeset($font-size-multiplier: 1, $line-height-multiplier: 1) {
+    font-size: $base-font-size*$font-size-multiplier;
+    font-size: as-rem($base-font-size*$font-size-multiplier);
+    line-height: $baseline-size*$line-height-multiplier;
+    line-height: as-rem($baseline-size*$line-height-multiplier);
+}

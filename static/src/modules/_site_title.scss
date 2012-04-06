@@ -1,0 +1,12 @@
+.site-title {
+    font-size: $base-font-size*1.8;
+    font-size: as-rem($base-font-size*1.8);
+    float: right;
+    padding: 5px 0;
+    font-family: "prenton-condensed";
+
+    &:after {
+        content: '.com';
+        display: inline;
+    }
+}

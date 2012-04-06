@@ -1,0 +1,52 @@
+p, li, dt, dd {
+    @include typeset;
+    margin: 0;
+    margin-bottom: $baseline-size;
+    margin-bottom: as-rem($baseline-size);
+    color: #4d4d4d;
+
+    a {
+        color: #17154A;
+    }
+
+    a:hover {
+        color: #626091;
+    }
+
+    a:visited {
+        color: #4D4B70;
+    }
+}
+
+li {
+    margin-bottom: 0;
+}
+
+h1 {
+    font-family: "prenton-condensed";
+    @include typeset(2, 1);
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    @include typeset(1.4, 1.5);
+    margin: 0 0 $baseline-size*0.5 0;
+}
+h3 {
+    @include typeset(1, 1);
+    margin: 0 0 $baseline-size*0.5 0;
+}
+h4 {
+    @include typeset(1, 1);
+    margin: 0;
+}
+
+/* Highlight */
+pre {
+    padding: 0 $baseline-size $baseline-size*0.5 $baseline-size;
+    @include typeset(0.8, 0.8);
+    margin: -$baseline-size 0 $baseline-size*0.5 0;
+    color: #4d4d4d;
+}

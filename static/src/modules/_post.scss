@@ -15,7 +15,7 @@
 /* Post */
 .post {
     position: relative;
-    margin-bottom: $baseline-size*2;
+    padding-top: $baseline-size*2;
     padding-bottom: $baseline-size*1;
     padding-left: 80px;
     border-bottom: 1px solid #ccc;
@@ -39,11 +39,12 @@
 
 .post-title {
     color: $dark-color;
-    @include typeset(3,1.5);
-    font-family: "alternate-gothic-no-2-d";
+    @include typeset(2.5,1.5);
     font-weight: normal;
     margin: 0;
     padding: 0;
+    width: auto;
+    display: inline;
 
     a {
         color: inherit;
@@ -74,23 +75,18 @@
 .post-date {
     color: #999;
     display: block;
+    @include typeset(1,1);
     margin-bottom: $baseline-size*0.5;
     margin-bottom: as-rem($baseline-size*0.5);
-    line-height: $baseline-size;
-    line-height: as-rem($baseline-size);
 }
 
 .post-link {
     .post-title {
-        //@include typeset(2, 1.5);
-        color: #555;
+        @include typeset(1.5,1.5);
 
         a {
-            text-decoration: underline;
-
             .linkicon {
                 color: #999;
-                @include typeset(2,1);
                 text-decoration: none;
             }
         }
@@ -98,13 +94,12 @@
 }
 
 .post-short {
-    padding-left: 46px;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    padding: 0 0 4px 46px;
     border-bottom: 0;
 
     .post-title {
-        @include typeset(1.5,1.4);
+        @include typeset(1,1.2);
+        font-weight: 500;
 
         &:before {
             width: 32px;
@@ -130,9 +125,9 @@
 
 .post-short.post-link {
     .post-title {
+        font-weight: normal;
+        border-bottom: 0;
         a {
-            text-decoration: underline;
-
             .linkicon {
                 color: #999;
                 @include typeset(1,0.8);

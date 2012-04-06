@@ -1,0 +1,48 @@
+.site-footer {
+    background-color: $dark-color;
+    background-image: url("../img/texture.jpg");
+    @include box-shadow(#000 0 4px 4px inset);
+    position: relative;
+    overflow: hidden;
+
+    .site-footer-content {
+        max-width: 940px;
+        margin: auto;
+        padding: 20px 0;
+        overflow: hidden;
+
+        p {
+            color: #fff;
+        }
+    }
+    
+    .nav-list {
+        float: left;
+        width: 200px;
+        
+        a {
+            color: #fff;
+        }
+    }
+    
+    .about-me {
+        float: left;
+        width: 400px;
+        padding: 0 30px;
+        margin: 0 30px;
+        border-right: 1px solid lighten($dark-color, 5);
+        border-left: 1px solid darken($dark-color, 5);
+        @include box-shadow(darken($dark-color, 5) 1px 0 0, lighten($dark-color, 5) -1px 0 0);
+
+        a {
+            color: #ccc;
+        }
+    }
+
+    .social-networking {
+        float: left;
+        width: 240px;
+        padding-left: 30px;
+    }
+}
+

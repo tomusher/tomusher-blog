@@ -1,0 +1,14 @@
+body {
+    font-family: "Helvetica Neue", sans-serif;
+    margin: 0;
+    position: relative;
+    background: url("../img/bg.png");
+}
+
+.wrapper {
+    max-width: 940px;
+    margin: 40px auto;
+    padding: 0 10px;
+    position: relative;
+    //@include baseline-grid-background;
+}

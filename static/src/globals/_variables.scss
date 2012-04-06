@@ -1,0 +1,22 @@
+$columns: 12;
+$column-width: 60;
+$gutter-width: 20;
+
+$total-width: 90%;
+
+$context-value: 16px;
+$base-font-size: 16px;
+$baseline-size: 26px;
+$grid-background-baseline-height: $baseline-size;
+
+$dark-color: #202020;
+
+$all-color: #777;
+$videogames-color: #AD0000;
+$boardgames-color: #108C03;
+$dev-color: #AF049B;
+$interesting-color: #0464BA;
+$misc-color: #BC8F00;
+
+$category_icons: 0 all #777, 1 videogames #AD0000, 2 boardgames #108C03, 3 dev #AF049B, 4 interesting #0464BA, 5 misc #BC8F00;
+$social_icons: 6 twitter #5DD7FC, 7 rss #F37920, 8 mail #A3020E;
