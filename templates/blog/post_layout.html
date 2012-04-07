@@ -4,10 +4,10 @@
         {% if post.link %}
             <a href="{{ post.link }}">{{ post.title }} <span class="linkicon">→</span></a>
         {% else %}
-            <a href="{% url post_detail post.slug %}">{{ post.title }}</a>
+            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
         {% endif %}
     </h1>
-        <span class="post-date">{{ post.published_date|date:"F d, Y" }}</span>
+        <span class="post-date">{{ post.pub_date|date:"F d, Y" }}</span>
     </header>
     <div class="post-body">
         {{ post.content_html|safe }}

@@ -17,9 +17,8 @@ class PostListView(ListView):
     def get_queryset(self):
         category = self.kwargs['cat']
         if category=='all':
-            posts = Post.objects.all()
+            posts = Post.objects.published()
         else:
-            posts = Post.objects.filter(category=category)
+            posts = Post.objects.published().filter(category=category)
 
-        posts = posts.order_by('-published_date')[:10]
         return posts

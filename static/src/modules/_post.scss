@@ -15,8 +15,8 @@
 /* Post */
 .post {
     position: relative;
-    padding-top: $baseline-size*2;
     padding-bottom: $baseline-size*1;
+    margin-bottom: $baseline-size*2;
     padding-left: 80px;
     border-bottom: 1px solid #ccc;
 
@@ -34,6 +34,10 @@
     p {
         max-width: 600px;
     }
+}
+
+.post-body {
+    overflow: hidden;
 }
 
 
@@ -99,6 +103,7 @@
 .post-short {
     padding: 0 0 4px 46px;
     border-bottom: 0;
+    margin: 0;
 
     .post-title {
         @include typeset(1,1.2);
@@ -130,7 +135,7 @@
 .post-short.post-link {
     .post-title {
         border-bottom: 0;
-        font-style: italic;
+
         a {
             .linkicon {
                 color: #999;

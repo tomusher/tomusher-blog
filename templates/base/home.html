@@ -3,4 +3,5 @@
 {% for post in posts %}
     {% include 'blog/post_layout.html' %}
 {% endfor %}
+<a class="all-posts-link" href="{% url post_list "all" %}">See All Posts</a>
 {% endblock %}

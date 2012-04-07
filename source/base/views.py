@@ -6,5 +6,5 @@ class HomeView(TemplateView):
     template_name = "base/home.html"
 
     def get_context_data(self, **kwargs):
-        posts = Post.objects.all().order_by('-published_date')[:10]
+        posts = Post.objects.published()[:20]
         return {'posts': posts}

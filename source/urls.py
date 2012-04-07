@@ -3,7 +3,7 @@ from base.views import HomeView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from filebrowser.sites import site
 from django.conf import settings
-from blog.views import PostDetailView, PostListView
+from blog.views import PostListView
 
 from django.contrib import admin
 admin.autodiscover()
@@ -12,18 +12,18 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'tomusher.views.home', name='home'),
     # url(r'^tomusher/', include('tomusher.foo.urls')),
-
-    url(r'$^', HomeView.as_view(), name="home"),
-    url(r'^posts/(?P<slug>[\w-]+)/$', PostDetailView.as_view(), name="post_detail"),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
         'document_root' : settings.MEDIA_ROOT,
     }),
 
+    url(r'$^', HomeView.as_view(), name="home"),
+
     url(r'^admin/filebrowser/', include(site.urls)),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^(?P<cat>[\w-]+)/$', PostListView.as_view(), name="post_list"),
     (r'^grappelli/', include('grappelli.urls')),
+
+    url(r'^', include('blog.urls')),
 )
 
 urlpatterns += staticfiles_urlpatterns()
