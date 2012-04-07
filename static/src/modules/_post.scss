@@ -49,23 +49,24 @@
     a {
         color: inherit;
         text-decoration: none;
-    }
-    &:before {
-        display: block;
-        content: '';
-        width: 64px;
-        height: 64px;
-        background: $dark-color url("../img/icons.svg") 0 0;
-        @include background-size(auto);
-        @include border-radius(32px);
-        position: absolute;
-        left: 0;
+
+        &:before {
+            display: block;
+            content: '';
+            width: 64px;
+            height: 64px;
+            background: $dark-color url("../img/icons.svg") 0 0;
+            @include background-size(auto);
+            @include border-radius(32px);
+            position: absolute;
+            left: 0;
+        }
     }
 }
 
 @each $icon in $category_icons {
     .post-#{nth($icon,2)} {
-        .post-title:before {
+        .post-title a:before {
             background-position: - nth($icon,1)*64px 0;
             background-color: nth($icon,3);
         }
@@ -76,8 +77,10 @@
     color: #999;
     display: block;
     @include typeset(1,1);
+    text-transform: uppercase;
     margin-bottom: $baseline-size*0.5;
     margin-bottom: as-rem($baseline-size*0.5);
+    font-family: "prenton-condensed";
 }
 
 .post-link {
@@ -99,12 +102,13 @@
 
     .post-title {
         @include typeset(1,1.2);
-        font-weight: 500;
 
-        &:before {
-            width: 32px;
-            height: 32px;
-            @include background-size(288px 32px);
+        a {
+            &:before {
+                width: 32px;
+                height: 32px;
+                @include background-size(288px 32px);
+            }
         }
 
     }
@@ -115,7 +119,7 @@
 
     @each $icon in $category_icons {
         &.post-#{nth($icon,2)} {
-            .post-title:before {
+            .post-title a:before {
                 background-position: - nth($icon,1)*32px 0;
                 background-color: nth($icon,3);
             }
@@ -125,8 +129,8 @@
 
 .post-short.post-link {
     .post-title {
-        font-weight: normal;
         border-bottom: 0;
+        font-style: italic;
         a {
             .linkicon {
                 color: #999;

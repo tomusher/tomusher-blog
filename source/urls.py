@@ -15,7 +15,6 @@ urlpatterns = patterns('',
 
     url(r'$^', HomeView.as_view(), name="home"),
     url(r'^posts/(?P<slug>[\w-]+)/$', PostDetailView.as_view(), name="post_detail"),
-    url(r'^(?P<cat>[\w-]+)/$', PostListView.as_view(), name="post_list"),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
         'document_root' : settings.MEDIA_ROOT,
     }),
@@ -23,6 +22,7 @@ urlpatterns = patterns('',
     url(r'^admin/filebrowser/', include(site.urls)),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^(?P<cat>[\w-]+)/$', PostListView.as_view(), name="post_list"),
     (r'^grappelli/', include('grappelli.urls')),
 )
 
