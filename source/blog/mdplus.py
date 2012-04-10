@@ -4,6 +4,7 @@ from sorl.thumbnail import get_thumbnail
 import re
 from embedly import Embedly
 import models
+from django.conf import settings
 
 class EmbedBlockPattern(markdown.blockprocessors.BlockProcessor):
     RE =  re.compile(r'\!!' + markdown.inlinepatterns.BRK + r'\s*\((<.*?>|([^\)]*))\)')
@@ -29,7 +30,7 @@ class EmbedBlockPattern(markdown.blockprocessors.BlockProcessor):
             parent.append(el)
 
     def embed(self, url):
-        embed = Embedly('799502ba808f11e18d6f4040d3dc5c07')
+        embed = Embedly(settings.EMBEDLY_API_KEY)
         if not self.size:
             self.size = "640x480"
 

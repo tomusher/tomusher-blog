@@ -148,3 +148,5 @@ LOGGING = {
         },
     }
 }
+
+EMBEDLY_API_KEY = '799502ba808f11e18d6f4040d3dc5c07'
