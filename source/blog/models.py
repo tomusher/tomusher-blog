@@ -29,7 +29,7 @@ class Post(models.Model):
     pub_date = models.DateTimeField()
     content = models.TextField()
     category = models.CharField(max_length=255, choices=CATEGORIES)
-    status = models.IntegerField(choices=STATUS)
+    status = models.IntegerField(choices=STATUS, default=0)
 
     # Content converted to HTML
     content_html = models.TextField(blank=True)

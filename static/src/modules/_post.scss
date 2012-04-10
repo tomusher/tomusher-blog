@@ -20,16 +20,6 @@
     padding: 0 80px;
     border-bottom: 1px solid #ccc;
 
-    .post-image {
-        margin-bottom: $baseline-size;
-
-        img {
-            display: block;
-            overflow: visible;
-            width: 100%;
-            height: auto;
-        }
-    }
 
     p {
         max-width: 600px;
@@ -85,6 +75,21 @@
     margin-bottom: $baseline-size*0.5;
     margin-bottom: as-rem($baseline-size*0.5);
     font-family: "prenton-condensed";
+}
+
+.post-image {
+    margin-bottom: $baseline-size;
+
+    img {
+        display: block;
+        overflow: visible;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.post-embed {
+    margin-bottom: $baseline-size;
 }
 
 .post-link {

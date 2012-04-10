@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Post, Image
 
 class PostAdmin(admin.ModelAdmin):
-    pass
+    prepopulated_fields = {"slug": ("title",)}
 
 class ImageAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}

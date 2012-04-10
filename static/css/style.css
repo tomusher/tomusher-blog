@@ -872,24 +872,15 @@ a.site-title:visited {
   margin-bottom: 52px;
   padding: 0 80px;
   border-bottom: 1px solid #ccc; }
-  /* line 23, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
-  .post .post-image {
-    margin-bottom: 26px; }
-    /* line 26, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
-    .post .post-image img {
-      display: block;
-      overflow: visible;
-      width: 100%;
-      height: auto; }
-  /* line 34, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+  /* line 24, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
   .post p {
     max-width: 600px; }
 
-/* line 39, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+/* line 29, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
 .post-body {
   overflow: hidden; }
 
-/* line 44, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+/* line 34, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
 .post-title {
   color: #202020;
   font-size: 40px;
@@ -901,11 +892,11 @@ a.site-title:visited {
   padding: 0;
   width: auto;
   display: inline; }
-  /* line 53, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+  /* line 43, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
   .post-title .post-title-link {
     color: inherit;
     text-decoration: none; }
-    /* line 57, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+    /* line 47, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
     .post-title .post-title-link:before {
       display: block;
       content: '';
@@ -924,37 +915,37 @@ a.site-title:visited {
       position: absolute;
       left: 0; }
 
-/* line 73, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+/* line 63, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
 .post-all .post-title .post-title-link:before {
   background-position: 0px 0;
   background-color: #777777; }
 
-/* line 73, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+/* line 63, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
 .post-videogames .post-title .post-title-link:before {
   background-position: -64px 0;
   background-color: #ad0000; }
 
-/* line 73, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+/* line 63, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
 .post-boardgames .post-title .post-title-link:before {
   background-position: -128px 0;
   background-color: #108c03; }
 
-/* line 73, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+/* line 63, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
 .post-dev .post-title .post-title-link:before {
   background-position: -192px 0;
   background-color: #af049b; }
 
-/* line 73, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+/* line 63, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
 .post-interesting .post-title .post-title-link:before {
   background-position: -256px 0;
   background-color: #0464ba; }
 
-/* line 73, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+/* line 63, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
 .post-misc .post-title .post-title-link:before {
   background-position: -320px 0;
   background-color: #bc8f00; }
 
-/* line 80, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+/* line 70, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
 .post-date {
   color: #999;
   display: block;
@@ -967,29 +958,43 @@ a.site-title:visited {
   margin-bottom: 0.813rem;
   font-family: "prenton-condensed"; }
 
+/* line 80, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+.post-image {
+  margin-bottom: 26px; }
+  /* line 83, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+  .post-image img {
+    display: block;
+    overflow: visible;
+    width: 100%;
+    height: auto; }
+
 /* line 91, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+.post-embed {
+  margin-bottom: 26px; }
+
+/* line 96, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
 .post-link .post-title {
   font-size: 24px;
   font-size: 1.5rem;
   line-height: 39px;
   line-height: 2.438rem; }
-  /* line 94, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+  /* line 99, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
   .post-link .post-title .post-title-permalink {
     color: #999;
     text-decoration: none; }
 
-/* line 101, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+/* line 106, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
 .post-short {
   padding: 0 0 4px 46px;
   border-bottom: 0;
   margin: 0; }
-  /* line 106, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+  /* line 111, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
   .post-short .post-title {
     font-size: 16px;
     font-size: 1rem;
     line-height: 31.2px;
     line-height: 1.95rem; }
-    /* line 110, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+    /* line 115, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
     .post-short .post-title .post-title-link:before {
       width: 32px;
       height: 32px;
@@ -997,41 +1002,41 @@ a.site-title:visited {
       -moz-background-size: 288px 32px;
       -o-background-size: 288px 32px;
       background-size: 288px 32px; }
-  /* line 119, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+  /* line 124, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
   .post-short .post-date {
     font-size: 12.8px;
     font-size: 0.8rem;
     line-height: 20.8px;
     line-height: 1.3rem; }
-  /* line 125, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+  /* line 130, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
   .post-short.post-all .post-title .post-title-link:before {
     background-position: 0px 0;
     background-color: #777777; }
-  /* line 125, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+  /* line 130, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
   .post-short.post-videogames .post-title .post-title-link:before {
     background-position: -32px 0;
     background-color: #ad0000; }
-  /* line 125, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+  /* line 130, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
   .post-short.post-boardgames .post-title .post-title-link:before {
     background-position: -64px 0;
     background-color: #108c03; }
-  /* line 125, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+  /* line 130, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
   .post-short.post-dev .post-title .post-title-link:before {
     background-position: -96px 0;
     background-color: #af049b; }
-  /* line 125, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+  /* line 130, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
   .post-short.post-interesting .post-title .post-title-link:before {
     background-position: -128px 0;
     background-color: #0464ba; }
-  /* line 125, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+  /* line 130, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
   .post-short.post-misc .post-title .post-title-link:before {
     background-position: -160px 0;
     background-color: #bc8f00; }
 
-/* line 134, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+/* line 139, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
 .post-short.post-link .post-title {
   border-bottom: 0; }
-  /* line 137, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
+  /* line 142, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
   .post-short.post-link .post-title .post-title-permalink {
     color: #999;
     font-size: 16px;

@@ -32,7 +32,7 @@ class EmbedBlockPattern(markdown.blockprocessors.BlockProcessor):
     def embed(self, url):
         embed = Embedly(settings.EMBEDLY_API_KEY)
         if not self.size:
-            self.size = "640x480"
+            self.size = "560x315"
 
         try:
             width, height = self.size.split('x')
@@ -42,6 +42,7 @@ class EmbedBlockPattern(markdown.blockprocessors.BlockProcessor):
 
         obj = embed.oembed(url, **opts)
         el = etree.Element('div')
+        el.set('class', 'post-embed')
         el.text = obj.html
         return el
     
