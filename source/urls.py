@@ -21,7 +21,7 @@ urlpatterns = patterns('',
     url(r'^admin/filebrowser/', include(site.urls)),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    (r'^grappelli/', include('grappelli.urls')),
+    url(r'^grappelli/', include('grappelli.urls')),
 
     url(r'^', include('blog.urls')),
 )
