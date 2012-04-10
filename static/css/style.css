@@ -870,7 +870,7 @@ a.site-title:visited {
   position: relative;
   padding-bottom: 26px;
   margin-bottom: 52px;
-  padding-left: 80px;
+  padding: 0 80px;
   border-bottom: 1px solid #ccc; }
   /* line 23, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
   .post .post-image {

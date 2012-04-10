@@ -3,7 +3,7 @@ import markdown
 from embedly import Embedly
 from markdown import etree
 from sorl.thumbnail import get_thumbnail
-
+import re
 
 CATEGORIES = (
     ('technology', 'Technology & Video Games'),
@@ -58,41 +58,56 @@ class Image(models.Model):
 
 def markdown_process(text, obj):
     md = markdown.Markdown()
-    EMBED_LINK_RE = r'\!!' + markdown.inlinepatterns.BRK + r'\s*\((<.*?>|([^\)]*))\)'
-    embed_tag = EmbedLinkPattern(EMBED_LINK_RE, md)
-    md.inlinePatterns.add('embed_link', embed_tag, '<image_link')
-    md.inlinePatterns['image_link'] = ImageLinkPattern(markdown.inlinepatterns.IMAGE_LINK_RE, md)
-    #md.treeprocessors['populateimage'] = PopulateImageReferences(md)
-    md.extensions = ['extra']
+    md.parser.blockprocessors.add('embed_block', EmbedBlockPattern(md.parser), '<paragraph')
     return md.convert(text)
 
-#class PopulateImageReferences(markdown.treeprocessors.Treeprocessor):
-#    def run(self, root):
-#        images = root.getiterator('img')
-#
-#        for img in images:
-#            slug = img.attrib.get('alt')
-#            imgObj = Image.objects.get(slug=slug) 
-#            thumb = get_thumbnail(imgObj.image, "960x320", crop="center")
-#            img.set('src', thumb.url)
+class EmbedBlockPattern(markdown.blockprocessors.BlockProcessor):
+    RE =  re.compile(r'\!!' + markdown.inlinepatterns.BRK + r'\s*\((<.*?>|([^\)]*))\)')
 
-class ImageLinkPattern(markdown.inlinepatterns.ImagePattern):
-    def handleMatch(self, m):
-        imgpattern = markdown.inlinepatterns.ImagePattern(self.pattern, self.markdown)
-        el = imgpattern.handleMatch(m)
-        slug = el.get('src')
-        if not slug.startswith('http://'):
-            imgObj = Image.objects.get(slug=slug) 
-            thumb = get_thumbnail(imgObj.image, "960x320", crop="center")
-            el.set('src', thumb.url)
-        return el
+    def test(self, parent, block):
+        return bool(self.RE.search(block))
+    
+    def run(self, parent, blocks):
+        block = blocks.pop(0)
+        for i in self.RE.finditer(block):
+            match = self.RE.match(block)
+            src_parts = match.group(9).split()
+            url = src_parts[0]
+            self.size = ""
+            if len(src_parts) > 1:
+                self.size = src_parts[1]
+            if url.startswith('http://'):
+                el = self.embed(url)
+            else:
+                el = self.image(url)
 
-class EmbedLinkPattern(markdown.inlinepatterns.Pattern):
-    def handleMatch(self, m):
+            parent.append(el)
+
+    def embed(self, url):
         embed = Embedly('799502ba808f11e18d6f4040d3dc5c07')
-        src_parts = m.group(9).split()
-        obj = embed.oembed(src_parts[0])
+        if not self.size:
+            self.size = "640x480"
+
+        try:
+            width, height = self.size.split('x')
+            opts = {'width': width, 'height':height}
+        except:
+            opts = {}
+
+        obj = embed.oembed(url, **opts)
         el = etree.Element('div')
         el.text = obj.html
         return el
+    
+    def image(self, url):
+        if not self.size:
+            self.size = "780x260"
 
+        img = etree.Element('img')
+        img_obj = Image.objects.get(slug=url) 
+        thumb = get_thumbnail(img_obj.image, self.size, crop="center")
+        img.set('src', thumb.url)
+        el = etree.Element('div')
+        el.append(img)
+        el.set('class', 'post-image') 
+        return el
