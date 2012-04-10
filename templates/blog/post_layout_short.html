@@ -1,9 +1,8 @@
 <div class="post post-short post-{{ post.category }} {% if post.link %}post-link{% endif %}">
     <h2 class="post-title">
+        <a class="post-title-link" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
         {% if post.link %}
-            <a href="{{ post.get_absolute_url }}">{{ post.title }} <span class="linkicon">→</span></a>
-        {% else %}
-            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+        <a class="post-title-permalink" href="{{ post.get_absolute_url}}">→</a>
         {% endif %}
     </h2>
 </div>

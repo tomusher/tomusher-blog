@@ -2,9 +2,9 @@
     <header class="post-header">
     <h1 class="post-title">
         {% if post.link %}
-            <a href="{{ post.link }}">{{ post.title }} <span class="linkicon">→</span></a>
+            <a class="post-title-link" href="{{ post.link }}">{{ post.title }}</a> <a href="{{ post.get_absolute_url }}" class="post-title-permalink">→</a>
         {% else %}
-            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+            <a class="post-title-link" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
         {% endif %}
     </h1>
         <span class="post-date">{{ post.pub_date|date:"F d, Y" }}</span>

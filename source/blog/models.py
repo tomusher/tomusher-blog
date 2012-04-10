@@ -19,6 +19,9 @@ class PostManager(models.Manager):
     def published(self):
         return super(PostManager, self).get_query_set().filter(status=1).order_by('-pub_date')
 
+    def drafts(self):
+        return super(PostManager, self).get_query_set().filter(status=0).order_by('-pub_date')
+
 class Post(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField()
@@ -46,6 +49,9 @@ class Post(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    class Meta:
+        ordering = ('-pub_date',)
 
 class Image(models.Model):
     name = models.CharField(max_length=255)
