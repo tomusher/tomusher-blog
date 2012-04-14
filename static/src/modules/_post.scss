@@ -1,28 +1,31 @@
-/* Post List */
-.post-list {
-    // No styles
-}
-
-.post-list-group {
-    margin-bottom: $baseline-size*1.5;
-
-    .post-list-grouper {
-        @include typeset(1.5, 1);
-        margin-bottom: $baseline-size*0.5;
-    }
-}
-
 /* Post */
 .post {
     position: relative;
-    padding-bottom: $baseline-size*1;
     margin-bottom: $baseline-size*2;
-    padding: 0 80px;
+    padding: 0 0 $baseline-size*1 0;
     border-bottom: 1px solid #ccc;
-
 
     p {
         max-width: 600px;
+    }
+
+    pre {
+        padding: 0;
+
+        code {
+            padding: $baseline-size/2 30px;
+            background-color: rgba(230,230,230,0.4);
+        }
+    }
+
+    blockquote {
+        border-left: 4px solid #e5e5e5;
+        margin: 0 0 0 12px;
+        padding: 0 12px;
+
+        p {
+            color: #666;
+        }
     }
 }
 
@@ -30,13 +33,15 @@
     overflow: hidden;
 }
 
+.post-header {
+    margin-left: 40px;
+}
 
 .post-title {
     color: $dark-color;
-    @include typeset(2.5,1.5);
+    @include typeset(2,1.5);
     font-weight: normal;
     margin: 0;
-    padding: 0;
     width: auto;
     display: inline;
 
@@ -47,13 +52,14 @@
         &:before {
             display: block;
             content: '';
-            width: 64px;
-            height: 64px;
+            width: 32px;
+            height: 32px;
             background: $dark-color url("../img/icons.svg") 0 0;
-            @include background-size(auto);
+            @include background-size(288px 32px);
             @include border-radius(32px);
             position: absolute;
             left: 0;
+            top: 5px;
         }
     }
 }
@@ -61,7 +67,7 @@
 @each $icon in $category_icons {
     .post-#{nth($icon,2)} {
         .post-title .post-title-link:before {
-            background-position: - nth($icon,1)*64px 0;
+            background-position: - nth($icon,1)*32px 0;
             background-color: nth($icon,3);
         }
     }
@@ -90,8 +96,14 @@
 
 .post-embed {
     margin-bottom: $baseline-size;
+    max-width: 100%;
+
+    iframe {
+        max-width: 100%;
+    }
 }
 
+/* Link-style post */
 .post-link {
     .post-title {
         @include typeset(1.5,1.5);
@@ -103,6 +115,7 @@
     }
 }
 
+/* Short-style post */
 .post-short {
     padding: 0 0 4px 46px;
     border-bottom: 0;
@@ -116,6 +129,7 @@
                 width: 32px;
                 height: 32px;
                 @include background-size(288px 32px);
+                top: 0;
             }
         }
 
@@ -135,6 +149,7 @@
     }
 }
 
+/* Short-style link-style post */
 .post-short.post-link {
     .post-title {
         border-bottom: 0;
@@ -144,5 +159,39 @@
             @include typeset(1,0.8);
             text-decoration: none;
         }
+    }
+}
+
+@media only screen and (min-width: 520px) {
+    .post {
+        padding: 0 0 0 80px;
+    }
+    .post-header {
+        margin-left: 0;
+    }
+    .post-title {
+        @include typeset(2.5,1.5);
+
+        .post-title-link {
+            &:before {
+                width: 64px;
+                height: 64px;
+                @include background-size(auto);
+                top: 0;
+            }
+        }
+    }
+    
+    @each $icon in $category_icons {
+        .post-#{nth($icon,2)} {
+            .post-title .post-title-link:before {
+                background-position: - nth($icon,1)*64px 0;
+                background-color: nth($icon,3);
+            }
+        }
+    }
+
+    .post-short {
+        padding: 0 0 4px 46px;
     }
 }

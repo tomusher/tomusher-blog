@@ -16,8 +16,10 @@
 // Modules
 @import "modules/_site_title.scss";
 @import "modules/_nav_list.scss";
+@import "modules/_post_list.scss";
 @import "modules/_post.scss";
 @import "modules/_about_me.scss";
-@import "modules/_social_networking.scss";
 @import "modules/_all_posts_link.scss";
 
+// Syntax Highlighter Theme
+@import "theme/_github.scss";

@@ -8,41 +8,83 @@
     .site-footer-content {
         max-width: 940px;
         margin: auto;
-        padding: 20px 0;
+        padding: 20px 10px;
         overflow: hidden;
 
         p {
             color: #fff;
         }
     }
-    
+
     .nav-list {
-        float: left;
-        width: 200px;
-        
+        padding: 10px 0;
         a {
             color: #fff;
         }
     }
-    
-    .about-me {
-        float: left;
-        width: 400px;
-        padding: 0 30px;
-        margin: 0 30px;
-        border-right: 1px solid lighten($dark-color, 5);
-        border-left: 1px solid darken($dark-color, 5);
-        @include box-shadow(darken($dark-color, 5) 1px 0 0, lighten($dark-color, 5) -1px 0 0);
 
+    .about-me {
         a {
             color: #ccc;
         }
     }
+}
 
-    .social-networking {
-        float: left;
-        width: 240px;
-        padding-left: 30px;
+@media only screen and (min-width: 520px) {
+    .site-footer {
+        .nav-list {
+            float: left;
+            width: 40%;
+            padding: 0 0 15px 0;
+        }
+
+        .about-me {
+            float: left;
+            width: 60%;
+            padding: 0;
+        }
+
+        .nav-list-social {
+            clear: both;
+            width: 100%;
+
+            .nav-item {
+                float: left;
+                clear: none;
+                width: auto;
+                padding-right: 20px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 780px) {
+    .site-footer {
+        .nav-list {
+            width: 25%;
+            padding: 0;
+        }
+        
+        .about-me {
+            width: 42%;
+            padding: 0 2%;
+            margin: 0 2%;
+            border-right: 1px solid lighten($dark-color, 5);
+            border-left: 1px solid darken($dark-color, 5);
+            @include box-shadow(darken($dark-color, 5) 1px 0 0, lighten($dark-color, 5) -1px 0 0);
+        }
+
+        .nav-list-social {
+            clear: none;
+            float: left;
+            width: 25%;
+            padding: 0;
+
+            .nav-item {
+                clear: both;
+                width: auto;
+            }
+        }
     }
 }
 

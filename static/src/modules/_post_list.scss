@@ -1,0 +1,14 @@
+/* Post List */
+.post-list {
+    // No styles
+}
+
+.post-list-group {
+    margin-bottom: $baseline-size*1.5;
+
+    .post-list-grouper {
+        @include typeset(1.5, 1);
+        margin-bottom: $baseline-size*0.5;
+    }
+}
+
