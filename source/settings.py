@@ -1,8 +1,9 @@
 # Django settings for tomusher project.
 
 import os
+import imp
+secrets = imp.load_source('secrets', '../../secrets/secrets.py')
 SITE_ROOT = os.path.dirname(__file__)
-import django.conf.global_settings as DEFAULT_SETTINGS
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -18,7 +19,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'tomusher',                      # Or path to database file if using sqlite3.
         'USER': 'tomusher',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
+        'PASSWORD': secrets.DB_PASSWORD,                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
@@ -83,7 +84,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '9wg$3v^-0i+zwxim&1$l@=&4*5=8y8t^*wipg8nuwm^7qp+$$4'
+SECRET_KEY = secrets.SECRET_KEY
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
