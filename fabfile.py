@@ -5,12 +5,17 @@ def prod():
     env.hosts = ['178.79.138.225:2200']
 
     env.site_path = '/srv/www/tomusher'
-    env.repo_path = '{0}/source'.format(env.site_path)
+    env.repo_path = '{0}/repo'.format(env.site_path)
     env.source_path = '{0}/source'.format(env.repo_path)
-    env.activate = 'source {0}/env/bin/activate'.format(env.site_path)
+    env.activate = 'source /srv/envs/tomusher/bin/activate'
 
 def venv(command):
     sudo(env.activate + '&&' + command, user=env.user)
+
+def requirements():
+    with cd(env.repo_path):
+        with prefix(env.activate):
+            run("pip install -r requirements.txt")
 
 def update():
     with cd(env.repo_path):
