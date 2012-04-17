@@ -14,8 +14,14 @@
 
         code {
             padding: $baseline-size/2 30px;
-            background-color: rgba(230,230,230,0.4);
         }
+    }
+
+    code {
+        background-color: rgba(230,230,230,0.4);
+        border: 1px solid #ddd;
+        padding: 2px 4px;
+        @include border-radius(4px);
     }
 
     blockquote {
@@ -69,6 +75,7 @@
         .post-title .post-title-link:before {
             background-position: - nth($icon,1)*32px 0;
             background-color: nth($icon,3);
+            margin-left: round(cos(2)*2)+px;
         }
     }
 }
