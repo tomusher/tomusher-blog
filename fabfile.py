@@ -19,6 +19,7 @@ def requirements():
 
 def update():
     with cd(env.repo_path):
+        run("git clean -f -d")
         run("git pull")
     with cd(env.site_path):
         run("cp -R secrets.py {0}/secrets.py".format(env.source_path))
