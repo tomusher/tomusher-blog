@@ -1,7 +1,8 @@
 .sass-cache/
-/media/cache/
+/media/
 /static/.sass-cache/
 *.swp
 *.swo
 *.pyc
+secrets.py
 .DS_Store

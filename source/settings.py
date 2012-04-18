@@ -2,7 +2,7 @@
 
 import os
 import imp
-secrets = imp.load_source('secrets', '../../secrets/secrets.py')
+import secrets
 SITE_ROOT = os.path.dirname(__file__)
 
 DEBUG = True
@@ -66,6 +66,8 @@ STATIC_ROOT = os.path.join(SITE_ROOT, '../../static')
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
+
+ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -145,4 +147,11 @@ LOGGING = {
     }
 }
 
-EMBEDLY_API_KEY = '799502ba808f11e18d6f4040d3dc5c07'
+EMBEDLY_API_KEY = secrets.EMBEDLY_API_KEY
+
+if not SITE_ROOT.startswith('/srv'):
+    try:
+        from settings_local import *
+    except ImportError:
+        pass
+
