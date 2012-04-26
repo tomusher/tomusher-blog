@@ -522,6 +522,18 @@ body {
   position: relative; }
 
 /* line 1, /Users/Tom/Sites/tomusher/static/src/_type.scss */
+::-moz-selection {
+  background: #9d9d9d;
+  color: #fff;
+  text-shadow: none; }
+
+/* line 2, /Users/Tom/Sites/tomusher/static/src/_type.scss */
+::selection {
+  background: #9d9d9d;
+  color: #fff;
+  text-shadow: none; }
+
+/* line 4, /Users/Tom/Sites/tomusher/static/src/_type.scss */
 p, li, dt, dd {
   font-size: 16px;
   font-size: 1rem;
@@ -531,21 +543,21 @@ p, li, dt, dd {
   margin-bottom: 26px;
   margin-bottom: 1.625rem;
   color: #4d4d4d; }
-  /* line 8, /Users/Tom/Sites/tomusher/static/src/_type.scss */
+  /* line 11, /Users/Tom/Sites/tomusher/static/src/_type.scss */
   p a, li a, dt a, dd a {
     color: #17154A; }
-  /* line 12, /Users/Tom/Sites/tomusher/static/src/_type.scss */
+  /* line 15, /Users/Tom/Sites/tomusher/static/src/_type.scss */
   p a:hover, li a:hover, dt a:hover, dd a:hover {
     color: #626091; }
-  /* line 16, /Users/Tom/Sites/tomusher/static/src/_type.scss */
+  /* line 19, /Users/Tom/Sites/tomusher/static/src/_type.scss */
   p a:visited, li a:visited, dt a:visited, dd a:visited {
     color: #4D4B70; }
 
-/* line 21, /Users/Tom/Sites/tomusher/static/src/_type.scss */
+/* line 24, /Users/Tom/Sites/tomusher/static/src/_type.scss */
 li {
   margin-bottom: 0; }
 
-/* line 25, /Users/Tom/Sites/tomusher/static/src/_type.scss */
+/* line 28, /Users/Tom/Sites/tomusher/static/src/_type.scss */
 h1, h2, h3, h4 {
   font-family: "prenton";
   font-weight: normal;
@@ -555,7 +567,7 @@ h1, h2, h3, h4 {
   line-height: 1.625rem;
   margin: 0 0 13px 0; }
 
-/* line 32, /Users/Tom/Sites/tomusher/static/src/_type.scss */
+/* line 35, /Users/Tom/Sites/tomusher/static/src/_type.scss */
 h1 {
   font-family: "prenton-condensed";
   font-size: 32px;
@@ -565,21 +577,21 @@ h1 {
   margin: 0;
   padding: 0; }
 
-/* line 39, /Users/Tom/Sites/tomusher/static/src/_type.scss */
+/* line 42, /Users/Tom/Sites/tomusher/static/src/_type.scss */
 h2 {
   font-size: 22.4px;
   font-size: 1.4rem;
   line-height: 26px;
   line-height: 1.625rem; }
 
-/* line 42, /Users/Tom/Sites/tomusher/static/src/_type.scss */
+/* line 45, /Users/Tom/Sites/tomusher/static/src/_type.scss */
 h3 {
   font-size: 16px;
   font-size: 1rem;
   line-height: 26px;
   line-height: 1.625rem; }
 
-/* line 45, /Users/Tom/Sites/tomusher/static/src/_type.scss */
+/* line 48, /Users/Tom/Sites/tomusher/static/src/_type.scss */
 h4 {
   font-size: 12.8px;
   font-size: 0.8rem;
@@ -587,7 +599,7 @@ h4 {
   line-height: 1.625rem; }
 
 /* Highlight */
-/* line 50, /Users/Tom/Sites/tomusher/static/src/_type.scss */
+/* line 53, /Users/Tom/Sites/tomusher/static/src/_type.scss */
 pre {
   padding: 0 26px 13px 26px;
   font-size: 12.8px;
@@ -670,7 +682,7 @@ pre {
     padding: 0; }
   /* line 68, /Users/Tom/Sites/tomusher/static/src/layouts/_site_footer.scss */
   .site-footer .about-me {
-    width: 42%;
+    width: 41%;
     padding: 0 2%;
     margin: 0 2%;
     border-right: 1px solid #2d2d2d;
