@@ -1036,7 +1036,7 @@ a.site-title:visited {
   .post-image img {
     display: block;
     overflow: visible;
-    width: 100%;
+    max-width: 100%;
     height: auto; }
 
 /* line 104, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */

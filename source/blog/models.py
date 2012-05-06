@@ -1,5 +1,6 @@
 from django.db import models
 from .mdplus import EmbedBlockPattern
+from sorl.thumbnail import get_thumbnail
 import markdown
 
 CATEGORIES = (
@@ -60,8 +61,61 @@ class Image(models.Model):
 
     image = models.ImageField(upload_to="blog-images")
 
+from misaka import Markdown, HtmlRenderer
+import re
+import shlex
+from markdown import etree
+
+class NewRenderer(HtmlRenderer):
+    def super_image(self, text):
+        alt = text.group(1)
+        opts = text.group(9)
+        name = ""
+        split_opts = [ x.replace("\0", "") for x in shlex.split(opts) ]
+        img = etree.Element('img')
+        url = split_opts.pop(0)
+        img_obj = Image.objects.get(slug=unicode(url)) 
+        img.set('alt', alt)
+        width, height = (720, 180)
+        crop = "center"
+
+        for setting in split_opts:
+            if "=" in setting:
+                key, val = setting.split("=")
+                if key == "size":
+                    size = str(val)
+                    if "x" in size:
+                        size = size.split("x")
+                        if size[0]:
+                            width = size[0]
+                        height = size[1]
+                    else:
+                        width=size
+                elif key == "crop":
+                    crop = val
+            else:
+                name = setting
+
+        img.set('width', str(width))
+        img.set('height', str(height))
+
+        thumb = get_thumbnail(img_obj.image, "{0}x{1}".format(width, height), crop=crop)
+        img.set('src', thumb.url)
+        el = etree.Element('div')
+        el.set('class', 'post-image') 
+        el.append(img)
+        return etree.tostring(el)
+
+    def preprocess(self, text):
+        RE =  re.compile(r'\!!' + markdown.inlinepatterns.BRK + r'\s*\((<.*?>|([^\)]*))\)')
+        text = RE.sub(self.super_image, text)
+                
+        return text
+
+
 def markdown_process(text, obj):
-    md = markdown.Markdown()
-    md.parser.blockprocessors.add('embed_block', EmbedBlockPattern(md.parser), '<paragraph')
-    return md.convert(text)
+    #md = markdown.Markdown()
+    #md.parser.blockprocessors.add('embed_block', EmbedBlockPattern(md.parser), '<paragraph')
+    md = Markdown(NewRenderer())
+    return md.render(text)
 
