@@ -19,7 +19,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'tomusher',                      # Or path to database file if using sqlite3.
         'USER': 'tomusher',                      # Not used with sqlite3.
-        'PASSWORD': secrets.DB_PASSWORD,                  # Not used with sqlite3.
+        'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
@@ -149,7 +149,7 @@ LOGGING = {
 
 EMBEDLY_API_KEY = secrets.EMBEDLY_API_KEY
 
-if not SITE_ROOT.startswith('/srv'):
+if not SITE_ROOT.startswith(('/srv','/vagrant')):
     try:
         from settings_local import *
     except ImportError:

@@ -1,7 +1,6 @@
 from django.conf.urls.defaults import patterns, include, url
 from base.views import HomeView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from filebrowser.sites import site
 from django.conf import settings
 from blog.views import PostListView
 
@@ -18,7 +17,6 @@ urlpatterns = patterns('',
 
     url(r'$^', HomeView.as_view(), name="home"),
 
-    url(r'^admin/filebrowser/', include(site.urls)),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^grappelli/', include('grappelli.urls')),

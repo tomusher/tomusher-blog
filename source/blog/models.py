@@ -1,5 +1,4 @@
 from django.db import models
-from .mdplus import EmbedBlockPattern
 from sorl.thumbnail import get_thumbnail
 import markdown
 
@@ -64,7 +63,7 @@ class Image(models.Model):
 from misaka import Markdown, HtmlRenderer
 import re
 import shlex
-from markdown import etree
+from lxml import etree
 
 class NewRenderer(HtmlRenderer):
     def super_image(self, text):

@@ -6,3 +6,6 @@
 *.pyc
 secrets.py
 .DS_Store
+deploy/cookbooks/
+deploy/tmp
+.vagrant

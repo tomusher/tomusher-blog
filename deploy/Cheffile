@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'http://community.opscode.com/api/v1'
+
+cookbook 'apt'
+cookbook 'build-essential'
+cookbook 'database'
+cookbook 'git'
+cookbook 'gunicorn'
+cookbook 'nginx'
+cookbook 'ohai'
+cookbook 'openssl'
+cookbook 'postgresql'
+cookbook 'python'
+
+cookbook 'supervisor',
+    :git => "https://github.com/coderanger/chef-supervisor"
