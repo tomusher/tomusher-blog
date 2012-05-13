@@ -1,0 +1,7 @@
+{
+    "ipaddress": "178.79.138.225",
+    "name": "178.79.138.225",
+    "run_list": [
+        "role[tomusher-blog]"
+    ]
+}

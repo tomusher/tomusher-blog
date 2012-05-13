@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+    "python": ">= 0.0.0"
+  },
+  "name": "tomusher-blog",
+  "maintainer_email": "tom@tomusher.com",
+  "attributes": {
+  },
+  "license": "Apache v2.0",
+  "suggestions": {
+  },
+  "platforms": {
+    "debian": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0"
+  },
+  "maintainer": "Tom Usher",
+  "long_description": "",
+  "version": "0.1.0",
+  "recommendations": {
+  },
+  "recipes": {
+    "tomusher-blog": "Installs tomusher-blog"
+  },
+  "groupings": {
+  },
+  "conflicting": {
+  },
+  "replacing": {
+  },
+  "description": "Installs tomusher-blog",
+  "providing": {
+  }
+}

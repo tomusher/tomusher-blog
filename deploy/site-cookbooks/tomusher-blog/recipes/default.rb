@@ -7,6 +7,12 @@ repository = "git://github.com/tomusher/tomusher-blog.git"
 
 include_recipe "python"
 
+%w{libxml2-dev libxslt1-dev}.each do |pkg|
+    package pkg do
+        action :install
+    end
+end
+
 group group do
     gid 2101
 end
@@ -23,7 +29,6 @@ directory deploy_to do
     mode '0755'
     recursive true
 end
-
 
 %w{logs shared static media/uploads}.each do |dir|
     directory "#{deploy_to}/#{dir}" do
@@ -62,6 +67,7 @@ end
 
 env = python_virtualenv "#{deploy_to}/env" do
     action :create
+    interpreter "python2.6"
 end
 
 template "#{node[:nginx][:dir]}/sites-available/#{id}" do
@@ -108,7 +114,12 @@ end
 
 supervisor_service id do
     action :enable
-    base_command = "#{deploy_to}/env/bin/gunicorn_django"
+    if node[:env]=="vagrant":
+        base_command = "#{deploy_to}/env/bin/gunicorn_django"
+    else
+        base_command = "newrelic-admin run-program #{deploy_to}/env/bin/gunicorn_django"
+    end
+    environment ({"NEW_RELIC_CONFIG_FILE" => "/tmp/newrelic.ini"})
     command "#{base_command} -c #{deploy_to}/gunicorn.conf"
     directory "#{deploy_to}/current/source/"
     autostart false
@@ -116,6 +127,12 @@ supervisor_service id do
 end
 
 if node[:env]=="vagrant"
+    execute "umount" do
+        command "umount -a -t vboxsf"
+    end
+    execute "mount" do
+        command "mount -t vboxsf -o uid=`id -u tomusher`,gid=`id -g tomusher` v-root #{deploy_to}/current"
+    end
     link "#{deploy_to}/current/source/secrets.py" do
         to "#{deploy_to}/shared/secrets.py"
     end
@@ -126,14 +143,16 @@ if node[:env]=="vagrant"
     execute "syncdb" do
         command "#{deploy_to}/env/bin/python #{deploy_to}/current/source/manage.py syncdb --noinput"
         user owner
+        group owner
     end
     execute "collectstatic" do
         command "#{deploy_to}/env/bin/python #{deploy_to}/current/source/manage.py collectstatic --noinput"
         user owner
+        group owner
     end
 else
     deploy_revision id do
-        action :force_deploy
+        action :deploy
         revision revision
         repository repository
         user owner
@@ -156,10 +175,12 @@ else
             execute "syncdb" do
                 command "#{deploy_to}/env/bin/python #{release_path}/source/manage.py syncdb --noinput"
                 user owner
+                group owner
             end
             execute "collectstatic" do
-                command "#{deploy_to}/env/bin/python #{release_path}/source/manage.py collectstatic --noinput"
+                command "#{deploy_to}/env/bin/python #{deploy_to}/current/source/manage.py collectstatic --noinput"
                 user owner
+                group owner
             end
         end
     end

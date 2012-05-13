@@ -5,7 +5,7 @@ Vagrant::Config.run do |config|
     config.vm.box = "lucid32"
     config.vm.forward_port 80, 4040
     config.ssh.max_tries = 150
-    config.vm.share_folder("v-root", "/srv/www/tomusher-blog/current", ".", :create => true, :owner => "tomusher", :group => "tomusher")
+    config.vm.share_folder("v-root", "/srv/vagrant", ".", :create => true, :owner => "vagrant", :group => "vagrant")
     config.vm.customize ["modifyvm", :id, "--rtcuseutc", "on"]
     config.vm.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
 
@@ -24,7 +24,9 @@ Vagrant::Config.run do |config|
   #   chef.json = { :mysql_password => "foo" }
   # end
 
+    config.vm.provision :shell, :inline => "apt-get update"
     config.vm.provision :shell, :inline => "gem update chef"
+    config.vm.provision :shell, :inline => "mkdir -p /srv/www/tomusher-blog/current && rsync /srv/vagrant/ /srv/www/tomusher-blog/current/"
     config.vm.provision :chef_solo do |chef|
         chef.json = {
             :env => 'vagrant'

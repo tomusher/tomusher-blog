@@ -1,0 +1,16 @@
+{
+    "name": "tomusher-blog",
+    "description": "Tomusher.com Blog",
+    "json_class": "Chef::Role",
+    "default_attributes": {},
+    "override_attributes": {},
+    "run_list": [
+        "recipe[apt]",
+        "recipe[git]",
+        "recipe[build-essential]",
+        "recipe[nginx]",
+        "recipe[postgresql::server]",
+        "recipe[tomusher-blog]"
+    ],
+    "env_run_lists": {}
+}
