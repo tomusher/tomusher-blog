@@ -7,7 +7,7 @@ repository = "git://github.com/tomusher/tomusher-blog.git"
 
 include_recipe "python"
 
-%w{libxml2-dev libxslt1-dev}.each do |pkg|
+%w{libxml2-dev libxslt1-dev libjpeg-dev}.each do |pkg|
     package pkg do
         action :install
     end
@@ -30,7 +30,7 @@ directory deploy_to do
     recursive true
 end
 
-%w{logs shared static media/uploads}.each do |dir|
+%w{logs shared static media media/uploads}.each do |dir|
     directory "#{deploy_to}/#{dir}" do
         owner owner
         group group
@@ -169,7 +169,11 @@ else
             "initial_data.json" => "source/initial_data.json"
         })
         before_migrate do
-            execute "#{deploy_to}/env/bin/pip install -r #{release_path}/requirements.txt"
+            execute "pip" do
+                command "#{deploy_to}/env/bin/pip install -r #{release_path}/requirements.txt"
+                user owner
+                group owner
+            end
         end
         before_restart do
             execute "syncdb" do

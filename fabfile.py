@@ -10,6 +10,16 @@ def prod():
     env.activate = 'source /srv/www/tomusher-blog/env/bin/activate'
     env.data_bag_key_path = '/Users/Tom/Sites/data_bag_key'
 
+def vagrant():
+    env.user = 'root'
+    env.hosts = ['127.0.0.1:2222']
+
+    env.site_path = '/srv/www/tomusher-blog'
+    env.repo_path = '{0}/current'.format(env.site_path)
+    env.source_path = '{0}/current/source'.format(env.repo_path)
+    env.activate = 'source /srv/www/tomusher-blog/env/bin/activate'
+    env.data_bag_key_path = '/Users/Tom/Sites/data_bag_key'
+
 def bootstrap():
     with lcd('deploy'):
         local('librarian-chef install')
@@ -22,3 +32,25 @@ def cook():
 
 def reload():
     run("supervisorctl restart tomusher-blog")
+
+def autosync():
+    "Automatically synchronise changes. For testing only."
+    import watchdog
+    from watchdog.observers import Observer
+    import time
+    import os
+
+    class RsyncEventHandler(watchdog.events.PatternMatchingEventHandler):
+        def on_any_event(self, event):
+            run("/srv/www/tomusher-blog/env/bin/python /srv/www/tomusher-blog/current/source/manage.py collectstatic --noinput")
+            reload()
+
+    observer = Observer()
+    observer.schedule(RsyncEventHandler(patterns=["*.css","*.py","*.html"]), path=os.getcwd(), recursive=True)
+    observer.start()
+    try:
+        while True:
+            time.sleep(100)
+    except KeyboardInterrupt:
+        observer.stop()
+        observer.join()
