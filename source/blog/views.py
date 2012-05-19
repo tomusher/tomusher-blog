@@ -27,3 +27,14 @@ class PostListView(ListView):
             posts = Post.objects.published().filter(category=category)
 
         return posts
+    
+    def get_context_data(self, **kwargs):
+        context = super(PostListView, self).get_context_data(**kwargs)
+        category = self.kwargs['cat']
+        if category=='all':
+            context['category'] = "All"
+        else:
+            temp_post = Post(category=category)
+            context['category'] = temp_post.get_category_display() 
+        return context
+

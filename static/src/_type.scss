@@ -26,14 +26,14 @@ li {
 }
 
 h1, h2, h3, h4 {
-    font-family: "prenton";
+    font-family: "prenton", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: normal;
     @include typeset(1.4, 1);
     margin: 0 0 $baseline-size*0.5 0;
 }
 
 h1 {
-    font-family: "prenton-condensed";
+    font-family: "prenton-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;;
     @include typeset(2, 1);
     margin: 0;
     padding: 0;
@@ -55,4 +55,9 @@ pre {
     @include typeset(0.8, 0.8);
     margin: -$baseline-size 0 $baseline-size*0.5 0;
     color: #4d4d4d;
+}
+
+/* Prevent FOUT */
+.wf-loading h1, .wf-loading h2, .wf-loading h3, .wf-loading h4, .wf-loading .site-title {
+    visibility: hidden;
 }

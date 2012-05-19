@@ -83,7 +83,7 @@
     text-transform: uppercase;
     margin-bottom: $baseline-size*0.5;
     margin-bottom: as-rem($baseline-size*0.5);
-    font-family: "prenton-condensed";
+    font-family: "prenton-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;;
 }
 
 .post-image {

@@ -563,7 +563,7 @@ li {
 
 /* line 28, /Users/Tom/Sites/tomusher/static/src/_type.scss */
 h1, h2, h3, h4 {
-  font-family: "prenton";
+  font-family: "prenton", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-size: 22.4px;
   font-size: 1.4rem;
@@ -573,7 +573,7 @@ h1, h2, h3, h4 {
 
 /* line 35, /Users/Tom/Sites/tomusher/static/src/_type.scss */
 h1 {
-  font-family: "prenton-condensed";
+  font-family: "prenton-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 32px;
   font-size: 2rem;
   line-height: 26px;
@@ -612,6 +612,11 @@ pre {
   line-height: 1.3rem;
   margin: -26px 0 13px 0;
   color: #4d4d4d; }
+
+/* Prevent FOUT */
+/* line 61, /Users/Tom/Sites/tomusher/static/src/_type.scss */
+.wf-loading h1, .wf-loading h2, .wf-loading h3, .wf-loading h4, .wf-loading .site-title {
+  visibility: hidden; }
 
 /* line 1, /Users/Tom/Sites/tomusher/static/src/layouts/_site_header.scss */
 .site-header {
@@ -714,7 +719,7 @@ pre {
   font-size: 1.8rem;
   float: right;
   padding: 2px 5px 18px 5px;
-  font-family: "prenton-condensed";
+  font-family: "prenton-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #fff;
   text-decoration: none; }
 
@@ -1035,7 +1040,7 @@ a.site-title:visited {
   text-transform: uppercase;
   margin-bottom: 13px;
   margin-bottom: 0.813rem;
-  font-family: "prenton-condensed"; }
+  font-family: "prenton-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 /* line 89, /Users/Tom/Sites/tomusher/static/src/modules/_post.scss */
 .post-image {
