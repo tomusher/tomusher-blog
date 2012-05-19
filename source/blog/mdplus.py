@@ -12,7 +12,7 @@ class EnhancedRenderer(HtmlRenderer):
         overwritten_options = self.parse_options(text)  
         
         options = {
-            "width": "720",
+            "width": "780",
             "height": "180",
             "crop": "center",
             "extra_class": "",
@@ -84,9 +84,12 @@ class EnhancedRenderer(HtmlRenderer):
             size = size.split("x")
             if size[0]:
                 width = size[0]
+            else:
+                width = None
             height = size[1]
         else:
             width = size
+            height = None
         return (width, height)
 
     def parse_options(self, text):
@@ -103,8 +106,10 @@ class EnhancedRenderer(HtmlRenderer):
 
         if 'size' in options:
             width, height = self.parse_size_string(options['size'])
-            options['width'] = width
-            options['height'] = height
+            if width:
+                options['width'] = width
+            if height:
+                options['height'] = height
 
         return options
 
