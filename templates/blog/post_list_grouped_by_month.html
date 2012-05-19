@@ -1,11 +1,18 @@
 {% regroup posts by pub_date|date:"F Y" as posts_by_month %}
 <div class="post-list-grouped">
+{% if posts %}
 {% for month in posts_by_month %}
     <div class="post-list-group">
         <h1 class="post-list-grouper">{{ month.grouper }}</h1>
         {% for post in month.list %}
             {% include 'blog/post_layout_short.html' %}
-            {% endfor %}
+        {% endfor %}
     </div>
 {% endfor %}
+{% else %}
+    <div class="notice-polite">
+        There's nothing in this category yet!
+    </div>
+{% endif %}
+
 </div>
