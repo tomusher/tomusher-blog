@@ -1,6 +1,11 @@
 server {
+    listen 80 default;
+    server_name _;
+    rewrite ^ $scheme://www.tomusher.com;
+}
+server {
         listen  80;
-        server_name test.tomusher-blog.com;
+        server_name www.tomusher.com;
         root /srv/www/tomusher-blog;
         client_max_body_size 20M;
 
