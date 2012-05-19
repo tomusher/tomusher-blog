@@ -35,10 +35,6 @@
     }
 }
 
-.post-body {
-    overflow: hidden;
-}
-
 .post-header {
     margin-left: 40px;
 }
@@ -92,18 +88,21 @@
 
 .post-image {
     margin-bottom: $baseline-size;
+    position: relative;
 
     img {
-        display: block;
         overflow: visible;
         max-width: 100%;
         height: auto;
     }
 }
 
-.post-image-right {
-    float: right;
-    padding: 10px;
+.post-image-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    @include box-shadow(rgba(0,0,0,0.8) 0 0 5px);
 }
 
 .post-embed {
@@ -176,7 +175,7 @@
 
 @media only screen and (min-width: 520px) {
     .post {
-        padding: 0 0 0 80px;
+        padding: 0 0 26px 80px;
     }
     .post-header {
         margin-left: 0;

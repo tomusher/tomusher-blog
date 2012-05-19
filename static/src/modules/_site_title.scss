@@ -2,10 +2,17 @@
     font-size: $base-font-size*1.8;
     font-size: as-rem($base-font-size*1.8);
     float: right;
-    padding: 5px 0;
+    padding: 2px 5px 18px 5px;
     font-family: "prenton-condensed";
     color: #fff;
     text-decoration: none;
 }
 
 a.site-title:visited { color: #fff; }
+
+
+@media only screen and (min-width: 520px) {
+    .site-title {
+        padding: 5px;
+    }
+}

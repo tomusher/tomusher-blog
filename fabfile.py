@@ -46,7 +46,7 @@ def autosync():
             reload()
 
     observer = Observer()
-    observer.schedule(RsyncEventHandler(patterns=["*.css","*.py","*.html"]), path=os.getcwd(), recursive=True)
+    observer.schedule(RsyncEventHandler(patterns=["*.css","*.js","*.py","*.html"]), path=os.getcwd(), recursive=True)
     observer.start()
     try:
         while True:

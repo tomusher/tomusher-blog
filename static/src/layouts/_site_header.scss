@@ -13,6 +13,12 @@
 
     .nav-list {
         position: absolute;
+        top: 30px;
+    }
+}
+
+@media only screen and (min-width: 520px) {
+    .site-header .nav-list {
         top: 20px;
     }
 }

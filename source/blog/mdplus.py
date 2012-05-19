@@ -42,7 +42,7 @@ class EnhancedRenderer(HtmlRenderer):
         el = etree.Element('div')
         el.set('class', 'post-embed')
         el.append(html.fromstring(obj.html))
-        return etree.tostring(el)
+        return html.tostring(el)
 
     def create_image(self, options):
         attr_map = {
@@ -68,15 +68,16 @@ class EnhancedRenderer(HtmlRenderer):
             img.set(attr, options[src])
 
         img.set('src', thumb.url)
-
-        el = etree.Element('a')
+        a = etree.Element('a')
+        a.set('href', larger.url)
+        a.append(img)
+        el = etree.Element('div')
         el.set('class', 
                 'post-image {0}'.format(
                     options['extra_class'])
                 ) 
-        el.set('href', larger.url)
-        el.append(img)
-        return etree.tostring(el)
+        el.append(a)
+        return html.tostring(el)
 
     def parse_size_string(self, size):
         if 'x' in size:
