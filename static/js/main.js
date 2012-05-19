@@ -6,6 +6,7 @@
 
   $(document).ready(function() {
     var images;
+    hljs.initHighlightingOnLoad();
     images = $(".post-image a");
     return images.imageFader();
   });

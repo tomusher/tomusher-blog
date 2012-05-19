@@ -1,6 +1,7 @@
 $ = jQuery
 
 $(document).ready ->
+    hljs.initHighlightingOnLoad();
     images = $(".post-image a")
     images.imageFader()
 
