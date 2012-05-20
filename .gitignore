@@ -8,4 +8,5 @@ secrets.py
 .DS_Store
 deploy/cookbooks/
 deploy/tmp
+deploy/auth.cfg
 .vagrant
