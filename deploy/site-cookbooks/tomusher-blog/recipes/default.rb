@@ -127,12 +127,23 @@ supervisor_service id do
 end
 
 if node[:env]=="vagrant"
+    directory "#{deploy_to}/releases/vagrant" do
+        owner owner
+        group group
+        mode '0755'
+        recursive true
+    end
     execute "umount" do
         command "umount -a -t vboxsf"
     end
     execute "mount" do
-        command "mount -t vboxsf -o uid=`id -u tomusher`,gid=`id -g tomusher` v-root #{deploy_to}/current"
+        command "mount -t vboxsf -o uid=`id -u tomusher`,gid=`id -g tomusher` v-root #{deploy_to}/releases/vagrant"
     end
+    link "#{deploy_to}/current" do
+        to "#{deploy_to}/releases/vagrant"
+    end
+    # Until fix in Chef 0.10.12, manually adjust permission of link
+    execute "chown -R #{owner}:#{group} #{deploy_to}/current"
     link "#{deploy_to}/current/source/secrets.py" do
         to "#{deploy_to}/shared/secrets.py"
     end

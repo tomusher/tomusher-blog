@@ -26,7 +26,7 @@ Vagrant::Config.run do |config|
 
     config.vm.provision :shell, :inline => "apt-get update"
     config.vm.provision :shell, :inline => "gem update chef"
-    config.vm.provision :shell, :inline => "mkdir -p /srv/www/tomusher-blog/current && rsync /srv/vagrant/ /srv/www/tomusher-blog/current/"
+    #config.vm.provision :shell, :inline => "umount -a -t vboxsf && mount -t vboxsf -o uid=`id -u vagrant`,gid=`id -g vagrant` v-root /srv/vagrant"
     config.vm.provision :chef_solo do |chef|
         chef.json = {
             :env => 'vagrant'
