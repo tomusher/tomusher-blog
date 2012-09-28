@@ -18,7 +18,7 @@ def vagrant():
     env.repo_path = '{0}/current'.format(env.site_path)
     env.source_path = '{0}/current/source'.format(env.repo_path)
     env.activate = 'source /srv/www/tomusher-blog/env/bin/activate'
-    env.data_bag_key_path = '/Users/Tom/Sites/data_bag_key'
+    env.data_bag_key_path = '/Users/tomusher/.keys/data_bag_key'
 
 def bootstrap():
     with lcd('deploy'):

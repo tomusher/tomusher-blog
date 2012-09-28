@@ -13,7 +13,7 @@ class PostDetailView(DetailView):
         if self.request.user.is_authenticated():
             return get_object_or_404(Post, slug=self.kwargs['slug'])
         else:
-            return get_object_or_404(Post, slug=self.kwargs['slug'], status=1)
+            return get_object_or_404(Post, slug=self.kwargs['slug'], status__in=(1,3))
 
 class PostListView(ListView):
     context_object_name = "posts"
