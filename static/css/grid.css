@@ -1,11 +1,8 @@
-/* line 41, ../src/grid.scss */
 body {
   width: 100%;
   *zoom: 1; }
-  /* line 27, ../src/grid.scss */
   body:before, body:after {
     content: "";
     display: table; }
-  /* line 31, ../src/grid.scss */
   body:after {
     clear: both; }
